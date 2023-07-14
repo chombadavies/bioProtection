@@ -29,12 +29,12 @@
                
               @foreach ($bioproducts as $bioproduct)
 
-              <div class="item border-shadow flat-column3 clearfix">
+              <div class="item border-shadow flat-column3 clearfix" >
                 <div class="item-border clearfix">
-                    <div class="featured-item">
-                        <a href="{{route('bioproduct.details',$bioproduct->id)}}"> <img src="{{asset('backend/uploads/'.$bioproduct->image)}}" alt=""  alt="image"></a>
+                    <div class="featured-item" style="height:250px">
+                        <a href="{{route('bioproduct.details',$bioproduct->id)}}"> <img src="{{asset('backend/uploads/'.$bioproduct->image)}}" alt=""   alt="image"></a>
                     </div><!-- /.feature-post -->
-                    <div class="content-item">
+                    <div class="content-item" style="height: 200px">
                         <span class="category">{{$bioproduct->category}}</span>
                         <h4 class="title-item">Name:<a href="{{route('bioproduct.details',$bioproduct->id)}}">{{$bioproduct->title}}</a></h4>
                         <div class="">
@@ -45,7 +45,7 @@
             </div>
               @endforeach
             
-              
+             
             </div>         
         </div><!-- /.container -->   
     </section>

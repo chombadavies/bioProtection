@@ -110,7 +110,7 @@
                     <div class="row">
                         <div class="col-md-12" class="form-control">
                             <label for="">product more details</label>
-                            <textarea id="meme" name="details" required></textarea>
+                            <textarea id="meme" name="details" ></textarea>
                         </div>
             
                                   
@@ -120,7 +120,7 @@
                     <div class="row">
                         <div class="col-md-12" class="form-control">
                             <label for="">Distributor Diteails</label>
-                            <textarea id="tutu" name="distributor_details" required></textarea>
+                            <textarea id="tutu" name="distributor_details"></textarea>
                         </div>
             
                                   

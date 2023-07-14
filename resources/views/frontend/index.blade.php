@@ -43,7 +43,7 @@
                         data-paddingbottom="[0,0,0,0"
                         data-paddingleft="[0,0,0,0]"
 
-                        style="z-index: 16;">Find BioProtction <span>Products</span><br> For your <br><span>Crops</span>
+                        style="z-index: 16;">Find BioProtection <span>Products</span><br> For your <br><span>Crops</span>
                         {{-- <p>The Kalro BioProtection Portal maintains a database of bilogical Plabt</p><br><p> Protection Products.Browse Registered Products In</p> --}}
                     </div>
 

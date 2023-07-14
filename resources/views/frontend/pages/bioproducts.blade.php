@@ -36,10 +36,10 @@
                     </div><!-- /.feature-post -->
                     <div class="content-item">
                         <span class="category">{{$bioproduct->category}}</span>
-                        <h2 class="title-item"><a href="{{route('bioproduct.details',$bioproduct->id)}}">{{$bioproduct->title}}</a></h2>
-                        {{-- <div class="date-time">
-                            <span>12 JUN 2017</span>
-                        </div> --}}
+                        <h4 class="title-item">Name:<a href="{{route('bioproduct.details',$bioproduct->id)}}">{{$bioproduct->title}}</a></h4>
+                        <div class="">
+                            <span> Active Ingredinet: <i class="date-time">{{$bioproduct->active_ingredient}}</i></span>
+                        </div>
                     </div><!-- /.contetn-post -->
                 </div><!-- /.entry-border -->
             </div>
@@ -49,15 +49,15 @@
             </div>         
         </div><!-- /.container -->   
     </section>
-    <section class="flat-quote bg-theme clearfix">
+    {{-- <section class="flat-quote bg-theme clearfix">
            <div class="container">
                <div class="quote-text float-left">
-                   <h3>Would you like to speak to one of our financial advisers?</h3>
+                   <h3>Would you like to Request for a call back on Kalro Bio Protection Products?</h3>
                    <p>Just submit your contact details and we’ll be in touch shortly.</p>
                </div>
                <div class="quote-link float-right">
-                   <a href="#" class="flat-button style2">GET A quote</a>
+                   <a href="#" class="flat-button style2">Book</a>
                </div>
            </div>
-    </section>   
+    </section>    --}}
 @endsection

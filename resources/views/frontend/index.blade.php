@@ -14,8 +14,8 @@
                     <!-- <div class="overlay">
                     </div> -->
                     <!-- MAIN IMAGE -->
-                    {{-- {{asset('frontend/images/slides/tol.png')}} --}}
-                    <img src=""  alt=""  data-bgposition="fill" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                   
+                    <img src=" {{asset('frontend/images/slides/tol.png')}}"  alt=""  data-bgposition="fill" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                 
@@ -115,7 +115,7 @@
        data-height="['auto']"
        style="z-index: 3;">
       
-    search
+       <i class="icon-search"></i>  Search
     </button>
 </form>
     <!-- END LAYER LINK -->
@@ -148,7 +148,7 @@
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi. Excepteur sint occaecat cupidatat non proident.
                         </div>
                     </div>
-                    <a href="services-details.html" class="flat-button">Read more</a>
+                    <a href="{{route('read.more')}}" class="flat-button">Read more</a>
                 </div>
             </div>
         </div>
@@ -432,7 +432,7 @@
         // alert(id);
           if(id.length>0)
           {
-              var url="<?=url('admin/valuechain/cascadePests')?>/"+id;
+              var url="<?=url('valuechain/cascadePests')?>/"+id;
               
                $.get(url,function(data){
                

@@ -7,12 +7,12 @@
         <div class="row">
             <div class="col-md-12"> 
                 <div class="page-title-heading">
-                    <h1 class="title">Services</h1>
+                    <h1 class="title">{{$bioproduct->title}}</h1>
                 </div><!-- /.page-title-captions -->  
                 <div class="breadcrumbs">
                     <ul>
-                        <li class="home"><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                        <li>Services Detail</li>
+                        <li class="home"><i class="fa fa-home"></i><a href="{{route('home')}}">Home</a></li>
+                        <li>{{$bioproduct->title}} Details</li>
                     </ul>                   
                 </div><!-- /.breadcrumbs --> 
             </div><!-- /.col-md-12 -->  
@@ -24,7 +24,7 @@
 <section class="flat-row services-details">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
                 <div class="sidebar">
                     <div class="widget widget-nav-menu">
                         <ul class="widget-menu">
@@ -97,114 +97,116 @@
                         <a href="#" class="flat-button style2">CONTACT US</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-9">
+            </div> --}}
+            <div class="col-lg-12">
                 <div class="item-wrap">
-                    <div class="item item-details">
-                        <div class="featured-item">
-                            <img src="images/services/details.jpg" alt="image">
-                        </div><!-- /.feature-post -->
-                        <div class="content-item">
-                            <h2 class="title-item">Why We Are Specialist</h2>
-                            <p>Consultec a professional telecommunication consulting firm providing strategic technology solutions for small and mid-size businesses and enterprise-level companies. We increase operational and financial efficiency using time-tested techniques. Having years of diverse experience, we are able to create cutting-edge recommendations that will transform your networks infrastructure. Analyzing your current infrastructure and services, Consultec cus-tomizes comprehensive solutions that are designed to fulfill your immediate needs, while considering future tech-nology requirements.</p>
-                        </div><!-- /.content-item -->
-                    </div><!-- /.item -->
+                 
                     <div class="video-services clearfix">
                         <div class="flat-video float-left">
-                            <a class="fancybox" data-type="iframe" href="https://www.youtube.com/embed/2Ge1GGitzLw?autoplay=1"> 
-                                <img src="images/services/video.jpg" alt="image">
-                            </a>
+                           
+                                <img src="{{asset('backend/uploads/'.$bioproduct->image)}}" alt="image" >
+                           
                         </div>
+                        <br>
+                        <br>
                         <div class="wrap-acadion float-left">
-                            <h2>Frequently Asked Questions</h2>
-                            <div class="flat-accordion">
-                                <div class="flat-toggle">
-                                    <div class="toggle-title active">Is there anything I should bring?</div>
-                                    <div class="toggle-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                    </div>
-                                </div><!-- /toggle -->
-                                <div class="flat-toggle">
-                                    <div class="toggle-title">Where can I find market research reports?</div>
-                                    <div class="toggle-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                    </div>
-                                </div><!-- /toggle -->
-                                <div class="flat-toggle">
-                                    <div class="toggle-title">Where can I find the Wall Street Journal ?</div>
-                                    <div class="toggle-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                    </div>
-                                </div><!-- /toggle -->
+                            
+                            <div class="">
+                              <h2>{{$bioproduct->title}}</h2>
+                              <h4 style="color:#009d40">{{$bioproduct->category}}</h4>
+                              <h6 style="color:#009d40">{{$bioproduct->active_ingredient}}</h6>
                             </div><!-- /.accordion -->                    
                         </div>
                     </div><!-- /.video-services -->
-                    <div class="flat-tabs" data-effect ="fadeIn">
-                        <ul class="menu-tab clearfix">
-                            <li class="active"><a href="#">HOW WE HELP</a></li>
-                            <li><a href="#">WHAT WE BELIEVE</a></li>
-                            <li><a href="#">CLIENT RESULTS</a></li>
-                            <li><a href="#">INSIGHTS</a></li>
-                        </ul><!-- /.menu-tab -->
-                        <div class="content-tab">
-                            <div class="content-inner">
-                                    <p>For more than 40 years, Bain's superior capabilities have helped thousands of clients in every industry de-velop and deliver winning strategies.<br>
-                                        We see things that others miss, offering you more creative solutions that combine our deep geographic ex-perience, intimate sector knowledge and clear insights into how to create value in your business.
-                                        <br> We work collaboratively, build lasting capabilities into your team and help your organization mobilize for change.<br>
-                                    We define our success by your results. We care deeply our clients. We enjoy our work and we have fun doing it.</p>
-                                    <h3>Our strategy consulting expertise includes:</h3> 
-                                    <p>Fundamentals of growth: Only 1 in 9 companies succeeds in achieving sustained growth. We help companies grow by defining and focusing on their core.<br>
-                                        Business unit strategy: Effective strategy for business units requires making proprietary decisions about where to play and how to win. The goal is to enable a business to reach its full economic potential.<br>
-                                        Corporate strategy: Corporate strategy involves a proprietary set of actions that enables a company to be worth more than just the sum of its parts. The most critical role of the center is to help business units achieve leadership positions.<br>
-                                        Founder's Mentality: To win in the long term, most companies need the cost advantages and scale of global incumbents. Yet, in achieving that scale, companies often lose what we call the Founder’s Mentality—the very core strengths and values that helped them succeed.<br>
-                                        Digital: We help companies develop digital strategies that deliver on core strategy, delight customers and enable them to operate smarter and faster.<br>
-                                        BothBrain Innovation: Bain works with clients to transform innovation for new product development and make big ideas actionable by combining creative strategy and analytic approaches.<br>
-                                    Emerging markets: Home to most of the world’s population and recording double-digit growth, emerging markets in Asia, Latin America and Eastern Europe are must-win areas for multinational companies. Bain helps companies navigate this unfamiliar terrain and successfully compete against indigenous companies and other multinationals.</p>
-                            </div>
-                            <div class="content-inner">
-                                    <p>For more than 40 years, Bain's superior capabilities have helped thousands of clients in every industry develop and deliver winning strategies.<br>
-                                        We see things that others miss, offering you more creative solutions that combine our deep geographic ex-perience, intimate sector knowledge and clear insights into how to create value in your business. We work collaboratively, build lasting capabilities into your team and help your organization mobilize for change.<br>
-                                    We define our success by your results. We care deeply our clients. We enjoy our work and we have fun doing it.</p>
-                                    <h3>Our strategy consulting expertise includes:</h3> 
-                                    <p>Fundamentals of growth: Only 1 in 9 companies succeeds in achieving sustained growth. We help companies grow by defining and focusing on their core.<br>
-                                        Business unit strategy: Effective strategy for business units requires making proprietary decisions about where to play and how to win. The goal is to enable a business to reach its full economic potential.<br>
-                                        Corporate strategy: Corporate strategy involves a proprietary set of actions that enables a company to be worth more than just the sum of its parts. The most critical role of the center is to help business units achieve leadership positions.<br>
-                                        Founder's Mentality: To win in the long term, most companies need the cost advantages and scale of global incumbents. Yet, in achieving that scale, companies often lose what we call the Founder’s Mentality—the very core strengths and values that helped them succeed.<br>
-                                        Digital: We help companies develop digital strategies that deliver on core strategy, delight customers and enable them to operate smarter and faster.<br>
-                                        BothBrain Innovation: Bain works with clients to transform innovation for new product development and make big ideas actionable by combining creative strategy and analytic approaches.<br>
-                                    Emerging markets: Home to most of the world’s population and recording double-digit growth, emerging markets in Asia, Latin America and Eastern Europe are must-win areas for multinational companies. Bain helps companies navigate this unfamiliar terrain and successfully compete against indigenous companies and other multinationals.</p>
-                            </div>
-                            <div class="content-inner">
-                                    <p>For more than 40 years, Bain's superior capabilities have helped thousands of clients in every industry develop and deliver winning strategies.<br>
-                                        We see things that others miss, offering you more creative solutions that combine our deep geographic ex-perience, intimate sector knowledge and clear insights into how to create value in your business. We work collaboratively, build lasting capabilities into your team and help your organization mobilize for change.<br>
-                                    We define our success by your results. We care deeply our clients. We enjoy our work and we have fun doing it.</p>
-                                    <h3>Our strategy consulting expertise includes:</h3> 
-                                    <p>Fundamentals of growth: Only 1 in 9 companies succeeds in achieving sustained growth. We help companies grow by defining and focusing on their core.<br>
-                                        Business unit strategy: Effective strategy for business units requires making proprietary decisions about where to play and how to win. The goal is to enable a business to reach its full economic potential.<br>
-                                        Corporate strategy: Corporate strategy involves a proprietary set of actions that enables a company to be worth more than just the sum of its parts. The most critical role of the center is to help business units achieve leadership positions.<br>
-                                        Founder's Mentality: To win in the long term, most companies need the cost advantages and scale of global incumbents. Yet, in achieving that scale, companies often lose what we call the Founder’s Mentality—the very core strengths and values that helped them succeed.<br>
-                                        Digital: We help companies develop digital strategies that deliver on core strategy, delight customers and enable them to operate smarter and faster.<br>
-                                        BothBrain Innovation: Bain works with clients to transform innovation for new product development and make big ideas actionable by combining creative strategy and analytic approaches.<br>
-                                    Emerging markets: Home to most of the world’s population and recording double-digit growth, emerging markets in Asia, Latin America and Eastern Europe are must-win areas for multinational companies. Bain helps companies navigate this unfamiliar terrain and successfully compete against indigenous companies and other multinationals.</p>
-                            </div>
-                            <div class="content-inner">
-                                    <p>For more than 40 years, Bain's superior capabilities have helped thousands of clients in every industry develop and deliver winning strategies.<br>
-                                        We see things that others miss, offering you more creative solutions that combine our deep geographic ex-perience, intimate sector knowledge and clear insights into how to create value in your business. We work collaboratively, build lasting capabilities into your team and help your organization mobilize for change.<br>
-                                    We define our success by your results. We care deeply our clients. We enjoy our work and we have fun doing it.</p>
-                                    <h3>Our strategy consulting expertise includes:</h3> 
-                                    <p>Fundamentals of growth: Only 1 in 9 companies succeeds in achieving sustained growth. We help companies grow by defining and focusing on their core.<br>
-                                        Business unit strategy: Effective strategy for business units requires making proprietary decisions about where to play and how to win. The goal is to enable a business to reach its full economic potential.<br>
-                                        Corporate strategy: Corporate strategy involves a proprietary set of actions that enables a company to be worth more than just the sum of its parts. The most critical role of the center is to help business units achieve leadership positions.<br>
-                                        Founder's Mentality: To win in the long term, most companies need the cost advantages and scale of global incumbents. Yet, in achieving that scale, companies often lose what we call the Founder’s Mentality—the very core strengths and values that helped them succeed.<br>
-                                        Digital: We help companies develop digital strategies that deliver on core strategy, delight customers and enable them to operate smarter and faster.<br>
-                                        BothBrain Innovation: Bain works with clients to transform innovation for new product development and make big ideas actionable by combining creative strategy and analytic approaches.<br>
-                                    Emerging markets: Home to most of the world’s population and recording double-digit growth, emerging markets in Asia, Latin America and Eastern Europe are must-win areas for multinational companies. Bain helps companies navigate this unfamiliar terrain and successfully compete against indigenous companies and other multinationals.</p>
-                            </div>
-                        </div><!-- /.content-tab -->
-                    </div><!-- /.roll-tabs -->
+                    <hr>
+
+                    <div>
+                        <ul class="UlList">
+                            <li>&#9989; Permitted for use</li>
+                            <br>
+                            <li>&#9989;This biological product has been registered for use in Brazil by the: <a href="">Pest Control Products Board of Kenya</a></li>
+                        </ul>
+                    </div>
+                    <br>
+                  
+                    <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+            <button class="btn success" style="width: 90%;background-color:white;border-color:#04AA6D;color:#04AA6D"><i class="fa fa-book"></i> Product Fact sheets</button>
+              </div>
+              <div class="col-md-3">
+            <button class="btn success" disabled style="width: 90%;background-color:white;border-color:#04AA6D;color:#04AA6D">Label</button>
+              </div>
+              <div class="col-md-3">
+               <button class="btn success" disabled style="width: 90%;background-color:white;border-color:#04AA6D;color:#04AA6D">Safety Datasheet</button>
+              </div>
+                    </div>
+
+                    <section class="flat-row services-grid">
+                        <div class="container">
+                            <div class="wrap-item wrap-column clearfix ">
+                              
+                          
+
+                              
+                                <div class="item border-shadow flat-column3 clearfix" >
+                                  <div class="content-item" style="background-color: #f1f1f1;height:350px" >
+                                  <br>
+                                    <h2 class="title-item"><a href="">Basic Information</a></h2>
+                                    <div class="date-time">
+                                       <h4>Registration Number:</h4>
+                                       <span>{{$bioproduct->reg_no}}</span>
+                                       <h4>Category:</h4>
+                                       <span>{{$bioproduct->category}}</span>
+                                       <h4>Registrant:</h4>
+                                       <span>{{$bioproduct->registrant}}</span>
+                                       <h4>Manufacturer:</h4>
+                                       <span>{{$bioproduct->manufacture}}</span>
+                                    </div>
+                                </div><!-- /.Content-item -->
+                                </div>
+
+           @if($bioproduct->distributor_details != null)
+                                <div class="item border-shadow flat-column3 clearfix" >
+                                    <div class="content-item" style="background-color: #f1f1f1;height:350px">
+                                       <br>
+                                        <h2 class="title-item"><a href="">Distributor Details</a></h2>
+                                        <div class="date-time">
+                                            <span>{!!$bioproduct->distributor_details!!}</span>
+                                        </div>
+                                    </div><!-- /.Content-item -->
+                                </div>  
+                                @else
+                                    
+                                @endif
+
+                                @if($bioproduct->detaiks != null)
+
+                                <div class="item border-shadow flat-column3 clearfix" >
+                                    <div class="content-item" style="background-color: #f1f1f1;height:350px">
+                                       <br>
+                                        <h2 class="title-item"><a href="">More Details</a></h2>
+                                        <div class="date-time">
+                                          <h5>{!!$bioproduct->details!!}</h5>
+                                        </div>
+                                    </div><!-- /.Content-item -->
+                                </div>
+
+                                @else
+                                    
+                                @endif
+                             
+                            </div>         
+                        </div><!-- /.container -->   
+                    </section>
+
+                   
                 </div><!-- /.item-wrap --> 
             </div><!-- /.Col-lg-9 -->
         </div><!-- /.row -->           
     </div><!-- /.container -->   
 </section>  
 @endsection
+
+
+

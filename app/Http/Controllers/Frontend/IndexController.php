@@ -32,10 +32,16 @@ $bioproducts=BioProduct::where(["valuechain_id"=>$data['valuechain_id'],"pest_id
 }
 
 public function bioProductDetails($id){
-    return view('frontend.pages.bioproduct_details');
+  $bioproduct=BioProduct::findOrFail($id);
+ 
+    return view('frontend.pages.bioproduct_details')->with(compact('bioproduct'));
 }
 
 public function contactus(){
     return view('frontend.pages.contactus');
+}
+
+public function readMore(){
+    return view('frontend.pages.readmore');
 }
 }

@@ -3,16 +3,12 @@
         <div class="row"> 
             <div class="col-lg-3 col-sm-6 reponsive-mb30">  
                 <div class="widget-logo">
-                    <div id="logo-footer" class="logo">
-                        <a href="index.html" rel="home">
-                            <img src="images/logofooter1.png" alt="image">
-                        </a>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p> 
+                 
+                   
                     <ul class="flat-information">
-                        <li><i class="fa fa-map-marker"></i><a href="#">40 Baria Sreet, NewYork City, US</a></li>
-                        <li><i class="fa fa-phone"></i><a href="#">001-1234-88888</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="#">info.deercreative@gmail.com</a></li>
+                        <li><i class="fa fa-map-marker"></i><a href="#">P.O. Box 57811, 00200, City Square, Nairobi, Kenya</a></li>
+                        <li><i class="fa fa-phone"></i><a href="#">+254 722 206986</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">info@kalro.org</a></li>
                     </ul>           
                 </div>         
             </div><!-- /.col-md-3 --> 
@@ -21,18 +17,16 @@
                 <div class="widget widget-out-link clearfix">
                     <h5 class="widget-title">Our Links</h5>
                     <ul class="one-half">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="team-v1.html">Pages</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">resources</a></li>
+                        
                     </ul>
                     <ul class="one-half">
-                        <li><a href="new-fullwidth.html">News</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="l">News</a></li>
+                        <li><a href="">Contact</a></li>
                         <li><a href="#">Support</a></li>
-                        <li><a href="page-careers.html">Careers</a></li>
+                      
                     </ul>
                 </div>
             </div><!-- /.col-md-3 -->
@@ -43,14 +37,14 @@
                     <ul class="popular-new">
                         <li>
                             <div class="text">
-                                <h6><a href="#">Colombia Gets a Business Makeover</a></h6>
-                                <span>20 Aug 2017</span>
+                                <h6><a href="#">Kalro Launches BioProtection Products</a></h6>
+                                <span>13 July 2023</span>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <h6><a href="#">Counting the Cost of Delay & Disruption</a></h6>
-                                <span>20 Aug 2017</span>
+                                <h6><a href="#">How To Use Kalro bioProducts</a></h6>
+                                <span>13 July 2023</span>
                             </div>
                         </li>
                     </ul>
@@ -84,7 +78,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="copyright"> 
-                    <p>@2017 <a href="https://themeforest.net/user/themesflat">Themesflat</a>. All rights reserved.
+                    <p>@2023 <a href="https://kalro.org" target="blank">KALRO</a>. All rights reserved.
                     </p>
                 </div>
             </div>

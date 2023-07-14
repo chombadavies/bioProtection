@@ -25,7 +25,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth']],function(){
     Route::resource('valuechains',App\Http\Controllers\Backend\ValuechainsController::class);
     Route::resource('pests',App\Http\Controllers\Backend\PestsController::class);
     Route::resource('bioproducts',App\Http\Controllers\Backend\BioProductsController::class);
-    Route::any('/valuechain/cascadePests/{id}',[\App\Http\Controllers\Backend\ValuechainsController::class,'cascadePests']);
+  
 });
 
 
@@ -37,3 +37,5 @@ Route::any('/',[\App\Http\Controllers\Frontend\IndexController::class,'index'])-
 Route::any('/bioproducts',[\App\Http\Controllers\Frontend\IndexController::class,'bioProducts'])->name('bioproducts');
 Route::any('/bioproducts/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'bioProductDetails'])->name('bioproduct.details');
 Route::any('/contact_us',[\App\Http\Controllers\Frontend\IndexController::class,'contactus'])->name('contact_us');
+Route::any('/read_more',[\App\Http\Controllers\Frontend\IndexController::class,'readMore'])->name('read.more');
+Route::any('/valuechain/cascadePests/{id}',[\App\Http\Controllers\Backend\ValuechainsController::class,'cascadePests']);

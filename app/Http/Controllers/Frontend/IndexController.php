@@ -44,4 +44,12 @@ public function contactus(){
 public function readMore(){
     return view('frontend.pages.readmore');
 }
+
+public function searchCrops($id){
+dd($id);
+
+}
+public function searchPests($id){
+dd($id);
+}
 }

@@ -39,3 +39,5 @@ Route::any('/bioproducts/{id}',[\App\Http\Controllers\Frontend\IndexController::
 Route::any('/contact_us',[\App\Http\Controllers\Frontend\IndexController::class,'contactus'])->name('contact_us');
 Route::any('/read_more',[\App\Http\Controllers\Frontend\IndexController::class,'readMore'])->name('read.more');
 Route::any('/valuechain/cascadePests/{id}',[\App\Http\Controllers\Backend\ValuechainsController::class,'cascadePests']);
+Route::any('/bioproduct/searchCrops/{id}',[\App\Http\Controllers\Backend\IndexController::class,'searchCrops']);
+Route::any('/bioproduct/searchPests/{id}',[\App\Http\Controllers\Backend\IndexController::class,'searchPests']);

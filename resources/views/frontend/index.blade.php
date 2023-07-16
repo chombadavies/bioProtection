@@ -15,7 +15,7 @@
                     </div> -->
                     <!-- MAIN IMAGE -->
                    
-                    <img src=" {{asset('frontend/images/slides/tol.png')}}"  alt=""  data-bgposition="fill" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src=" {{asset('frontend/images/slides/tol.png')}}"  alt="" style="attachment: fixed;" data-bgposition="fixed" data-kenburns="off" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                 

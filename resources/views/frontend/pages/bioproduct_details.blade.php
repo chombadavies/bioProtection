@@ -166,7 +166,7 @@
                                 </div><!-- /.Content-item -->
                                 </div>
 
-           @if($bioproduct->distributor_details != null)
+                          @if($bioproduct->distributor_details != null)
                                 <div class="item border-shadow flat-column3 clearfix" >
                                     <div class="content-item" style="background-color: #f1f1f1;height:350px">
                                        <br>
@@ -195,11 +195,56 @@
                                 @else
                                     
                                 @endif
+                               
                              
-                            </div>         
+                            </div> 
+                            <hr style="color: #009d40">        
                         </div><!-- /.container -->   
                     </section>
+                   
+                    <h3>View more crop and pest combinations for this product </h3>
+                    <div class="row">
+                       
+                        <div class="col-md-3">
+                            <button class="btn meme" value="{{$bioproduct->id}}" id="searchCrop" style="width: 90%;background-color:white;border-color:#04AA6D;color:#04AA6D"><i class="fa fa-leaf"></i> Search Crops</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn meme" value="{{$bioproduct->id}}" id="searchPest" style="width: 90%;background-color:white;border-color:#04AA6D;color:#04AA6D"><i class="fa fa-pest"></i> Search Pest</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="search_crop">
+                        <span>Find other crops this product is permitted for use on: </span>
+                        <br><br>
+                        <div>
+                            <select name="" id="" class="form-control" style="border-color:#04AA6D">
+                                <option value="">select Crop</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                    <div class="search_pest">
+                        <span>Find other pests this product is permitted for use on: </span>
+                        <br><br>
+                        <div>
+                            <select name="" id="" class="form-control" style="border-color:#04AA6D">
+                                <option value="">select pest</option>
+                            </select>
+                        </div>
+                       
+                    </div>
 
+
+           <hr style="color: #009d40">   
+           <h3>Disclainer</h3>  
+           <span>Kalro cannot be held responsible for any inaccuracies in the data and information.
+             Anyone acting or relying on such data and information does so entirely at their own risk.</span>   
+             <br>
+             <div class="col-md-3">
+                <a  type="button" class="meme btn btn-l" style="background-color:white;border-color:#04AA6D;color:#04AA6D">Back to Results</a>
+
+             </div>
+      
                    
                 </div><!-- /.item-wrap --> 
             </div><!-- /.Col-lg-9 -->
@@ -207,6 +252,71 @@
     </div><!-- /.container -->   
 </section>  
 @endsection
+<style>
+  .meme {
+  border-color: #009d40 !important;
+  color: #009d40 !important;
+}
+
+.meme:hover {
+  background-color: #009d40 !important;
+  color: white !important;
+}
+</style>
+
+
+@push("scripts")
+
+<script>
+    $(document).ready(function(){
+   $('.search_crop').hide();
+   $('.search_pest').hide();
+
+   $("#searchCrop").on("click",function(e){
+       e.preventDefault();
+       $('.search_crop').show();
+       $('.search_pest').hide();
+
+        var id=$(this).val();
+        // alert(id);
+          if(id.length>0)
+          {
+              var url="<?=url('bioproduct/searchCrops')?>/"+id;
+              
+               $.get(url,function(data){
+               
+                   $("#productId").html(data);
+               })
+          }
+
+   });
+
+   $("#searchPest").on("click",function(e){
+       e.preventDefault();
+       $('.search_crop').hide();
+       $('.search_pest').show();
+
+        var id=$(this).val();
+        // alert(id);
+          if(id.length>0)
+          {
+              var url="<?=url('bioproduct/searchPests')?>/"+id;
+              
+               $.get(url,function(data){
+               
+                   $("#productId").html(data);
+               })
+          }
+
+   });
+
+
+    })
+    
+    </script>
+
+
+   @endpush
 
 
 

@@ -413,11 +413,11 @@ h6 { font-size: 16px; line-height: 18px; }
 
 /* Color */
 .menu.menu-extra li a:hover, .flat-information li i,  .start-pri i, .item .content-item .title-item a:hover, .comment .comment-body .comment-info h6 a:hover, .product-single .social-links li a:hover, .product-single .product_meta li a, .widget-banner .sale, .widget-shopby .price_slider_amount .price_label input, .widget-shopby .ui-slider .ui-slider-handle, .infomation-text span, .breadcrumbs.color-661 ul li a:hover, .item .readmore::after, .item .readmore:hover, .widget.widget-phone i, .page-title.style2 .breadcrumbs ul li a:hover, .flat-information.style2 li a:hover, #mainnav.style2 ul.submenu > li > a:hover, .flat-language.color-white .current a:hover, #mainnav.style2 > ul > li.active > a, #mainnav.style2 > ul > li > a:hover, .social-links.color-white li a:hover, .entry .readmore:after, .project-dynamic .entry .content-post .title-post a:hover, .project-dynamic .entry .readmore:hover,.project-dynamic .entry .readmore:hover:after, .entry .meta-data .meta-post li.author a, .copyright a, #subscribe-msg .notification_error, #subscribe-msg .notification_ok, .flat-language > ul > li > ul li a:hover, .breadcrumbs ul li a:hover, .breadcrumbs ul li i, .footer a:hover, .entry .content-post .title-post a:hover, .entry .readmore:hover {
-	color: #f2c21a;
+	color: #009d40;
 }
 
 #mainnav > ul > li.active > a, #mainnav > ul > li > a:hover, .social-links.style2 li a:hover, .social-links.style3 a:hover, .widget-shopby .ui-slider .ui-slider-handle span.shadow.dow, .widget-shopby .ui-slider .ui-slider-range, #mainnav ul.submenu > li > a:hover {
-	background-color: #f2c21a;
+	background-color: #a37153;
 }
 
 #mainnav > ul > li.active > a, #mainnav > ul > li > a:hover, .widget-product ul li ins, .product-single ul.product-style li .detail, .testimonials .avatar span.name, .product .content-product .mount, .breadcrumbs.color-661 ul li a, .breadcrumbs.color-661 ul li, .breadcrumbs.color-661 ul li:before, .item .readmore, .item .content-item .title-item, .widget.widget-phone span, .page-title.style2 .page-title-heading h1, .page-title.style2 .breadcrumbs ul li, .page-title.style2 .breadcrumbs ul li a, .page-title.style2 .breadcrumbs ul li i, .page-title.style2 .breadcrumbs ul li:before, .menu-extra.color-661 li a, .entry .content-post .title-post a, .entry .readmore, .item .content-item .title-item a, .single-post p, #mainnav.color-661 > ul > li > a {

@@ -196,12 +196,12 @@
 
 /* Style2 */
 .flat-button.style2 {
-    background-color: #0F3661;
+    background-color: #a37153;
     color: #fff;
 }
 
 .flat-button.style2::before {
-    background-color: #f2c21a;
+    background-color: #a37153;
 }
 
 /* Style2 */

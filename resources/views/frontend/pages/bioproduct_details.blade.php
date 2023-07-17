@@ -236,7 +236,7 @@
 
 
            <hr style="color: #009d40">   
-           <h3>Disclainer</h3>  
+           <h3>Disclaimer</h3>  
            <span>Kalro cannot be held responsible for any inaccuracies in the data and information.
              Anyone acting or relying on such data and information does so entirely at their own risk.</span>   
              <br>

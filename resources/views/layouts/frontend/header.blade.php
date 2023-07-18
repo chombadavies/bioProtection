@@ -66,32 +66,16 @@
                                     <li><a href="about-us.html">About Us</a></li>
                                     <li><a href="services.html">Resources</a>
                                         <ul class="submenu"> 
-                                            <li><a href="services.html">resource  01</a></li>
-                                            <li><a href="services-v2.html">resource  02</a></li>
-                                            <li><a href="services-details.html">resource 03</a></li>
+                                            <li><a href="">resource  01</a></li>
+                                            <li><a href="">resource  02</a></li>
+                                            <li><a href="">resource 03</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>
-                                    <li><a href="about-us.html">partners</a></li>
+                                    <li><a href="">partners</a></li>
                                  
-                                    <li><a href="new-list.html">News</a>
-                                        <ul class="submenu"> 
-                                            <li><a href="new-list.html">News List</a>
-                                            </li>
-                                            <li><a href="new-fullwidth.html">News Full Width</a>
-                                            </li>
-                                            <li><a href="new-grid.html">News Grid</a>
-                                            </li>
-                                            <li><a href="new-masonry.html">News Masonry</a>
-                                            </li>
-                                        </ul><!-- /.submenu -->
-                                    </li>
+                                    <li><a href="">News</a></li>
                                   
-                                    <li><a href="contact.html">Contact</a>
-                                        <ul class="submenu right"> 
-                                            <li><a href="contact.html">Contact Style 01</a></li>
-                                            <li><a href="contact-v2.html">Contact Style 02</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li>                       
+                                    <li><a href="">About Us</a></li>                      
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->  
                           

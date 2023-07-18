@@ -12,7 +12,10 @@ class Pest extends Model
 
     public function ValueChain(){
         return $this->belongsTo('App\Models\ValueChain');
+        
     }
-  
+    public function bioproducts(){
+        return $this->belongsToMany('App\Models\BioProduct');
+      }
 
 }

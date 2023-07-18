@@ -13,5 +13,7 @@ class ValueChain extends Model
     public function pests(){
         return $this->hasMany('App\Models\Pest');
       }
-
+  public function bioproducts(){
+    return $this->belongsToMany('App\Models\BioProduct');
+  }
 }

@@ -10,7 +10,7 @@
                 <div class="row"> 
                     <div class="col-lg-3">
                         <div id="logo" class="logo">
-                            <a href="index.html" rel="home">
+                            <a href="{{route('home')}}" rel="home">
                                <span>logo</span>
                             </a>
                         </div><!-- /.logo -->

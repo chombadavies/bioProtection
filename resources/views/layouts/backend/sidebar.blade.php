@@ -4,7 +4,7 @@
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">ASNV</span>
+      <span class="brand-text font-weight-light" style="color:#009d40 !important">Kalro BioProtection Products</span>
     </a>
 
     <!-- Sidebar -->

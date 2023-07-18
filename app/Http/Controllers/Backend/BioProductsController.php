@@ -89,6 +89,10 @@ class BioProductsController extends Controller
           $data['image']=$image;
             
            $bioproduct=BioProduct::create($data);
+            $bioproduct_id=$bioproduct->id;
+           
+        $bioproduct->valuechains()->attach($data['valuechain_id']);  
+        $bioproduct->pests()->attach($data['valuechain_id']);  
         
            if ($bioproduct){
                return back()->with('success','Bio Product created Successfully');
@@ -140,4 +144,10 @@ class BioProductsController extends Controller
     {
         //
     }
+
+public function bioproduct_valuechain(){
+
+
+}
+
 }

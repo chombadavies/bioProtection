@@ -91,8 +91,8 @@ class BioProductsController extends Controller
            $bioproduct=BioProduct::create($data);
             $bioproduct_id=$bioproduct->id;
            
-        $bioproduct->valuechains()->attach($data['valuechain_id']);  
-        $bioproduct->pests()->attach($data['valuechain_id']);  
+        // $bioproduct->valuechains()->attach($data['valuechain_id']);  
+        // $bioproduct->pests()->attach($data['pest_id']);  
         
            if ($bioproduct){
                return back()->with('success','Bio Product created Successfully');
@@ -145,9 +145,44 @@ class BioProductsController extends Controller
         //
     }
 
-public function bioproduct_valuechain(){
+public function relationships(){
 
+    Session::put("page","Relationships");
+    $valuechains=ValueChain::all();
+    $pests=Pest::all();
+    $bioproducts=BioProduct::all();
+ 
+    $data['page_title']='Relationships';
+    return view('backend.bioproducts.relationships',$data)->with(compact('valuechains','pests','bioproducts'));
+}
 
+public function relationshipsStore(Request $request){
+    $data=$request->all();
+     $bioproduct=BioProduct::findOrFail($data['bioproduct_id']);
+    //  dd($data);
+ 
+    $pests=$data['pest_id'];
+
+    foreach ($pests as $pest) {
+   
+        $bioproduct->valuechains()->attach([$data['valuechain_id']
+        =>[
+             'pest_id'=>$pest
+                ]
+            ]); 
+       }
+    
+        Session::put("page","Relationships");
+        $valuechains=ValueChain::all();
+        $pests=Pest::all();
+        $bioproducts=BioProduct::all();
+
+        $data['page_title']='Relationships';
+        return view('backend.bioproducts.relationships',$data)->with(compact('valuechains','pests','bioproducts'));
+   
+    
+   
+    
 }
 
 }

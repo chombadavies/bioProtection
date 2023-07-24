@@ -124,7 +124,7 @@
                         <ul class="UlList">
                             <li>&#9989; Permitted for use</li>
                             <br>
-                            <li>&#9989;This biological product has been registered for use in Brazil by the: <a href="">Pest Control Products Board of Kenya</a></li>
+                            <li>&#9989;This {{$bioproduct->category}} product has been registered for use in Kenya by the: <a href="">{{$bioproduct->registrant}}</a></li>
                         </ul>
                     </div>
                     <br>
@@ -198,9 +198,20 @@
                                
                              
                             </div> 
-                            <hr style="color: #009d40">        
+                            <hr style="color: #009d40"> 
+                            <h5>Permitted uses</h5>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <p> <i class="fa fa-leaf"></i> {{$bioproduct->valuechain->title}} </p> 
+                                </div>
+                                <div class="col-md-2">
+                                    <p> <i class="fa-solid fa-bee"></i> {{$bioproduct->pest->title}} </p> 
+                                </div>
+                            </div>  
+                           
                         </div><!-- /.container -->   
                     </section>
+                    
                    
                     <h3>View more crop and pest combinations for this product </h3>
                     <div class="row">

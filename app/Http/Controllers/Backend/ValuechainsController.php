@@ -92,13 +92,5 @@ class ValuechainsController extends Controller
         //
     }
 
-    public function cascadePests($id)
-    {
-        $models = Pest::Where(['valuechain_id' => $id])->OrderBy('title')->get();
-        // echo '<option value="">-----select Product---</option>';
-        foreach ($models as $pest) {
-
-            echo '<option value="' . $pest->id . '">' . $pest->title . '</option>';
-        }
-    }
+  
 }

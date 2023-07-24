@@ -16,4 +16,7 @@ class ValueChain extends Model
   public function bioproducts(){
     return $this->belongsToMany('App\Models\BioProduct');
   }
+  public function bioproduct(){
+    return $this->hasMany('App\Models\BioProduct');
+  }
 }

@@ -135,6 +135,13 @@
                   <p>Bio Products</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{route('relationships')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>relationships</p>
+                </a>
+              </li>
             
            
             </ul>

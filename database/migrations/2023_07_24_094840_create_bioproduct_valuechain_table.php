@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBioproductPestsTable extends Migration
+class CreateBioproductValuechainTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBioproductPestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bioproduct_pests', function (Blueprint $table) {
+        Schema::create('bioproduct_valuechain', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pest_id');
-            $table->foreignId('bio_products_id');
+            $table->foreignId('bioprotection_id')->nullable();
+            $table->foreignId('valuechain_id')->nullable();
+            $table->foreignId('pest_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateBioproductPestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bioproduct_pests');
+        Schema::dropIfExists('bioproduct_valuechain');
     }
 }

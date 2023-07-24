@@ -33,7 +33,7 @@ $bioproducts=BioProduct::where(["valuechain_id"=>$data['valuechain_id'],"pest_id
 
 public function bioProductDetails($id){
   $bioproduct=BioProduct::findOrFail($id);
- 
+//   dd($bioproduct);
     return view('frontend.pages.bioproduct_details')->with(compact('bioproduct'));
 }
 
@@ -51,5 +51,24 @@ dd($id);
 }
 public function searchPests($id){
 dd($id);
+}
+
+public function relationships(){
+
+
+
+    return view('frontend.pages.relationships');
+
+   
+}
+
+public function cascadePests($id)
+{
+    $models = Pest::Where(['valuechain_id' => $id])->OrderBy('title')->get();
+    // echo '<option value="">-----select Product---</option>';
+    foreach ($models as $pest) {
+
+        echo '<option value="' . $pest->id . '">' . $pest->title . '</option>';
+    }
 }
 }

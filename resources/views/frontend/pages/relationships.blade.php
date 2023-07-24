@@ -35,7 +35,6 @@
                         <a href="{{route('bioproduct.details',$bioproduct->id)}}"> <img src="{{asset('backend/uploads/'.$bioproduct->image)}}" alt=""   alt="image"></a>
                     </div><!-- /.feature-post -->
                     <div class="content-item" style="height: 200px">
-                        <br>
                         <span class="category">{{$bioproduct->category}}</span>
                         <h4 class="title-item">Name:<a href="{{route('bioproduct.details',$bioproduct->id)}}">{{$bioproduct->title}}</a></h4>
                         <div class="">

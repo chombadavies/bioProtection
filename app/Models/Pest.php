@@ -18,4 +18,9 @@ class Pest extends Model
         return $this->belongsToMany('App\Models\BioProduct');
       }
 
+      public function bioproduct(){
+        return $this->hasMany('App\Models\BioProduct');
+      }
+
+
 }

@@ -24,6 +24,12 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
+
+            <div>
+          <a href="{{route('valuechains.index')}}" class="btn btn-sm btn-success" data-title="Add Item "><span class="fa fa-plus"><span> ValueChains List</a>
+        
+          </div>
+          <br>
             <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title"> <small><?=$page_title?></small></h3>

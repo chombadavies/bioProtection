@@ -78,7 +78,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('valuechains.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Value Chain List</p>
                 </a>
@@ -130,7 +130,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('bioproducts.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bio Products</p>
                 </a>
@@ -140,6 +140,86 @@
                 <a href="{{route('relationships')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>relationships</p>
+                </a>
+              </li>
+            
+           
+            </ul>
+          </li>
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Resource Themes
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('themes.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Theme</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('themes.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Themes List</p>
+                </a>
+              </li>
+            
+           
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Resources
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('resources.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Resource</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('resources.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Resources List</p>
+                </a>
+              </li>
+            
+           
+            </ul>
+          </li>
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                News
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('news.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create News</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('news.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>News List</p>
                 </a>
               </li>
             

@@ -8,6 +8,7 @@ use App\Models\ValueChain;
 use App\Models\Occupation;
 use App\Models\BioProduct;
 use App\Models\Pest;
+use App\Models\Testimonial;
 
 class IndexController extends Controller
 {
@@ -37,11 +38,13 @@ public function bioProductDetails($id){
     return view('frontend.pages.bioproduct_details')->with(compact('bioproduct'));
 }
 
-public function contactus(){
+public function contactUs(){
     return view('frontend.pages.contactus');
 }
 
 public function readMore(){
+
+  
     return view('frontend.pages.readmore');
 }
 
@@ -70,5 +73,16 @@ public function cascadePests($id)
 
         echo '<option value="' . $pest->id . '">' . $pest->title . '</option>';
     }
+}
+
+public function contactProcess(Request $request){
+    $data=$request->all();
+
+    $testimonial= Testimonial::create($data);
+
+    if ($testimonial){
+        return redirect()->route('contactus')->with('success','message sent successfully');
+    }
+
 }
 }

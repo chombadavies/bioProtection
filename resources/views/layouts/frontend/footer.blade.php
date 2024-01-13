@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="copyright"> 
-                    <p>@2023 <a href="https://kalro.org" target="blank">KALRO</a>. All rights reserved.
+                    <p>@2024 <a href="https://kalro.org" target="blank">KALRO</a>. All rights reserved.
                     </p>
                 </div>
             </div>

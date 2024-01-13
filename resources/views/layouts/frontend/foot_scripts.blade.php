@@ -34,3 +34,14 @@
     <script src="{{asset('frontend/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
     <script src="{{asset('frontend/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
     <script src="{{asset('frontend/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+  
+
+      <!-- The callback parameter is required, so we use console.debug as a noop -->
+      <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMYG0elMxVmZ156w6RLFoJgxytOCr1y1s&callback=console.debug&libraries=maps,marker&v=beta">
+      </script>
+
+<script>
+    setTimeout(function(){
+    $('#alert').slideUp();
+      },3000)
+     </script>

@@ -99,11 +99,11 @@
 
 /* Color */
 .title-section .title span, .contactform label.error, .start i, .section-about .fancybox.color-white:hover:after, .pricing-item .header-pricing .price-number, .pricing-item .header-pricing .symbol, .title-section .symbol, .fancybox:hover:after, .section-about .fancybox:hover:after, .iconbox .box-header .box-icon i, .flat-counter .numb-count, .countdown .square .numb, .iconbox.style2:hover .box-header .box-icon i {
-    color: #f2c21a;
+    color: #a37153
 }
 
 .fancybox:before, .flat-accordion .toggle-title.active::before, .testimonials.style2:hover .message, .testimonials.style2.active .message, .iconbox.style2 .box-header .box-icon, .title-section.style3 .title::before {
-    background-color: #f2c21a;    
+    background-color: #a37153    
 }
 
 /*color2 */
@@ -160,8 +160,8 @@
     -webkit-border-radius: 2px;
             border-radius: 2px;
     display: inline-block;
-    background: #f2c21a;
-    color: #28293a;
+    background: #a37153;
+    color: #fff;
     cursor: pointer;
     text-transform: uppercase; 
 }
@@ -174,7 +174,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: #0f3661;
+    background: #009d40;
     -webkit-transform-origin: 100% 50%;
     transform-origin: 100% 50%;
     -webkit-transform: scale3d(1, 2, 1);

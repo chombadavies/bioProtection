@@ -12,8 +12,11 @@
                         <div id="logo" class="logo">
                             <a href="{{route('home')}}" rel="home">
                                <span>logo</span>
-                            </a>
-                        </div><!-- /.logo -->
+                            </a> 
+                            
+                            
+                           
+                        </div>
                         
                     </div>
                     <div class="col-lg-9">
@@ -75,7 +78,7 @@
                                  
                                     <li><a href="">News</a></li>
                                   
-                                    <li><a href="">About Us</a></li>                      
+                                    <li><a href="{{route('contactus')}}">Contact Us</a></li>                      
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->  
                           

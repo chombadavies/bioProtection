@@ -23,6 +23,12 @@
             @include('layouts.notifications')
           <!-- left column -->
           <div class="col-md-12">
+
+            <div>
+              <a href="{{route('bioproducts.index')}}" class="btn btn-sm btn-success" data-title="Add Item "><span class="fa fa-plus"><span> BioProducts List</a>
+            
+              </div>
+              <br>
             <!-- jquery validation -->
             <div class="card card-info">
               <div class="card-header">

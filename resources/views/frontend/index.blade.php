@@ -148,11 +148,59 @@
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi. Excepteur sint occaecat cupidatat non proident.
                         </div>
                     </div>
-                    <a href="{{route('read.more')}}" class="flat-button">Read more</a>
+                    <a href="{{route('read.more')}}" class="flat-button btn btn-success">Read more</a>
                 </div>
             </div>
         </div>
     </div>  
+</section>
+
+<section class="flat-row section-testimonials2 padding2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">  
+                <div class="title-section text-center">
+                  
+                    <h1 class="cd-headline clip is-full-width">
+                      
+                        <span class="cd-words-wrapper">
+                            <b class="is-visible"> Resources</b>
+                         
+                        </span>
+                    </h1>
+                </div>      
+            </div>
+          
+        </div>
+<br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;border:none">
+                    <img class="card-img-top" src="{{asset('frontend/images/slides/meme.jpg')}}" alt="Card image cap">
+                    <br>
+                    <div class="card-body">
+                      <h5 class="card-title">Augmentative biological control: The power of enhancing ecosystems</h5>
+                      <p class="card-text" style="text-align: justify">Explore augmentative biological control in agriculture, a sustainable alternative to pesticides that enhances ecosystems and crop yields. Learn about its benefits, challenges, and global impact.</p>
+                      <br>
+                      <a href="#" class="flat-button">Read More</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;border:none" >
+                    <img class="card-img-top" src="{{asset('frontend/images/slides/meme.jpg')}}" alt="Card image cap" height="150px">
+                    <br>
+                    <div class="card-body">
+                      <h5 class="card-title">Natural substance biopesticides beginner’s guide: Types and how to use </h5>
+                      <p class="card-text">Explore the power of natural substance biopesticides: learn all about plant extracts, botanical and mineral oils and how to use them.</p>
+                      <br>
+                      <a href="#" class="flat-button">Read More</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="flat-row section-testimonials2 padding2">
@@ -258,8 +306,7 @@
         </div>
     </div>
 </section>
-
-{{-- <section class="flat-row background-nopara background-image1 section-counter">
+ {{-- <section class="flat-row background-nopara background-image1 section-counter">
     <div class="section-overlay style2"></div>
     <div class="container">
         <div class="row">
@@ -321,57 +368,8 @@
     </div><!-- /.container --> 
 </section>  --}}
 
-<section class="flat-row v7">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">  
-                <div class="title-section text-center">
-                    <h1 class="title">Latest News</h1>
-                </div>         
-            </div>
-        </div>
-        <div class="blog-carosuel-wrap2">
-            <div class="blog-shortcode post-list" >
-                <article class="entry clearfix">
-                    <div class="entry-border clearfix">
-                        <div class="featured-post">
-                            <a href="services-details.html"> <img src="{{asset('frontend/images/blog/ls1.jpg')}}" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <div class="content-post">
-                            <span class="category">Advisory Plan</span>
-                            <h2 class="title-post"><a href="services-details.html">Kalro Launces BioProtection Products</a></h2>
-                            <div class="meta-data style2 clearfix">
-                                <ul class="meta-post clearfix">
-                                    <li class="day-time">
-                                        <span>26 Dec 2017</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div><!-- /.contetn-post -->
-                    </div><!-- /.entry-border -->
-                </article>
-                <article class="entry clearfix">
-                    <div class="entry-border clearfix">
-                        <div class="featured-post">
-                            <a href="services-details.html"> <img src="{{asset('frontend/images/blog/ls2.jpg')}}" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <div class="content-post">
-                            <span class="category">Finance & Accounting</span>
-                            <h2 class="title-post"><a href="services-details.html">How To use Kalro BioProducts</a></h2>
-                            <div class="meta-data style2 clearfix">
-                                <ul class="meta-post clearfix">
-                                    <li class="day-time">
-                                        <span>20 Aug 2017</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div><!-- /.contetn-post -->
-                    </div><!-- /.entry-border -->
-                </article>
-            </div>
-        </div>
-    </div>  
-</section>
+
+
 
 {{-- <section class="section-maps-form wrap-blance blancejqurey2  parallax parallax4 clearfix">
     <div class="section-overlay style2"></div>
@@ -403,18 +401,74 @@
             </form>
         </div>
     </div>
-</section> --}}
+</section>  --}}
+
+<section class="flat-row v7">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">  
+                <div class="title-section text-center">
+                    <h1 class="title">Latest News</h1>
+                </div>         
+            </div>
+        </div>
+        <div class="blog-carosuel-wrap2">
+            <div class="blog-shortcode post-list" >
+                <article class="entry clearfix">
+                    <div class="entry-border clearfix">
+                        <div class="featured-post">
+                            <a href="services-details.html"> <img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" height="230" width="179" 
+                           style="border-radius: 20px;" alt="image"></a>
+                        </div><!-- /.feature-post -->
+                        <div class="content-post">
+                            <span class="category">Advisory Plan</span>
+                            <h2 class="title-post"><a href="services-details.html">Kalro Launces BioProtection Products</a></h2>
+                            <div class="meta-data style2 clearfix">
+                                <ul class="meta-post clearfix">
+                                    <li class="day-time">
+                                        <span>26 Dec 2017</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- /.contetn-post -->
+                    </div><!-- /.entry-border -->
+                </article>
+                <article class="entry clearfix">
+                    <div class="entry-border clearfix">
+                        <div class="featured-post">
+                            <a href="services-details.html"> <img src="{{asset('frontend/images/blog/pexels-craig-adderley-1563355.jpg')}}" height="230" width="300"
+                           style="border-radius: 20px;" alt="image"></a>
+                        </div><!-- /.feature-post -->
+                        <div class="content-post">
+                            <span class="category">Finance & Accounting</span>
+                            <h2 class="title-post"><a href="services-details.html">How To use Kalro BioProducts</a></h2>
+                            <div class="meta-data style2 clearfix">
+                                <ul class="meta-post clearfix">
+                                    <li class="day-time">
+                                        <span>20 Aug 2017</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- /.contetn-post -->
+                    </div><!-- /.entry-border -->
+                </article>
+            </div>
+        </div>
+    </div>  
+</section>
+
+
 
 <section class="flat-row section-client bg-section">
     <div class="container">
         <div class="row">       
             <div class="col-md-12">
                 <div class="flat-client" data-item="5" data-nav="false" data-dots="false" data-auto="true">
-                    <div class="client"><img src="{{asset('frontend/images/clients/1.png')}}" alt="image"></div>
-                    <div class="client"><img src="i{{asset('frontend/mages/clients/2.png')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/clients/3.png')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/clients/4.png')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/clients/5.png')}}" alt="image"></div>
+                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
+                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
+                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
+                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
+                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
                 </div><!-- /.flat-client -->      
             </div>
         </div>

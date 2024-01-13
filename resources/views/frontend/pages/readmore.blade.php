@@ -1,4 +1,4 @@
-@extends('frontend.pages.readmore')
+@extends('layouts.frontend.main')
 @section('content')
 <div class="page-title parallax parallax1">
     <div class="section-overlay"></div>

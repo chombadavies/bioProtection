@@ -11,7 +11,7 @@
     <!-- Boxed -->
     <div class="boxed">
 
- @include('layouts.frontend.topheader')
+
 
     <div class="flat-header-wrap">
         <!-- Header -->            

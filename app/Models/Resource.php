@@ -9,4 +9,8 @@ class Resource extends Model
 {
     use HasFactory;
     protected $guarded=['id'];
+
+    public function theme(){
+        return $this->belongsTo('App\Models\Theme');
+    }
 }

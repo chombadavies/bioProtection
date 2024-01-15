@@ -59,7 +59,10 @@
                                         <th>Action</th>
                                         <th>Resource Title</th>
                                         <th>Image</th>
-                                        <th>Desription</th>                                 
+                                        <th>Theme Category</th>
+                                        <th>Introduction</th>
+                                        <th>Desription</th>     
+                                        <th>status</th>                            
                     </tr>
                   </thead>
                   <tbody>
@@ -98,8 +101,11 @@
             columns: [
             {data: 'action', name: 'action',searchable:false,orderable:false},
            {data: 'title', name: 'title'},
-           {data: 'photo', name: 'photo'},    
-           {data:'description',name:'description'}      
+           {data: 'photo', name: 'photo'}, 
+           {data: 'theme', name: 'theme'},   
+           {data: 'introduction', name: 'introduction'},  
+           {data:'description',name:'description'},  
+           {data:'status',name:'status'}   
          
             ],
 

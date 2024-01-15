@@ -17,6 +17,8 @@ class CreateResourcesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
+            $table->foreignId('theme_id');
+            $table->longText('introduction');
             $table->longText('description');
             $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();

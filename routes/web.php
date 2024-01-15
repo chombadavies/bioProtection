@@ -42,8 +42,11 @@ Route::any('/',[\App\Http\Controllers\Frontend\IndexController::class,'index'])-
 Route::any('/bioproducts',[\App\Http\Controllers\Frontend\IndexController::class,'bioProducts'])->name('bioproducts');
 Route::any('/bioproducts/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'bioProductDetails'])->name('bioproduct.details');
 Route::any('/contact_us',[\App\Http\Controllers\Frontend\IndexController::class,'contactUs'])->name('contactus');
+Route::any('/resources',[\App\Http\Controllers\Frontend\IndexController::class,'Themes'])->name('themes');
 Route::any('/read_more',[\App\Http\Controllers\Frontend\IndexController::class,'readMore'])->name('read.more');
 Route::any('/valuechain/cascadePests/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'cascadePests']);
 Route::any('/bioproduct/searchCrops/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'searchCrops']);
 Route::any('/bioproduct/searchPests/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'searchPests']);
-Route::any('contacts_process',[App\Http\Controllers\Frontend\IndexController::class,'contactProcess'])->name('contact.process');
+Route::any('/resource_details/{id}',[App\Http\Controllers\Frontend\IndexController::class,'resourceDetails'])->name('resource.details');
+Route::any('/browseby_theme{id}',[\App\Http\Controllers\Frontend\IndexController::class,'browsebyTheme'])->name('browseby.theme');
+Route::any('/contacts_process',[App\Http\Controllers\Frontend\IndexController::class,'contactProcess'])->name('contact.process');

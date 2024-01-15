@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\ValueChain;
-use App\Models\Occupation;
-use App\Models\BioProduct;
 use App\Models\Pest;
+use App\Models\Theme;
+use App\Models\BioProduct;
+use App\Models\Occupation;
+use App\Models\ValueChain;
 use App\Models\Testimonial;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Resource;
 
 class IndexController extends Controller
 {
@@ -84,5 +86,37 @@ public function contactProcess(Request $request){
         return redirect()->route('contactus')->with('success','message sent successfully');
     }
 
+}
+
+public function Themes(){
+
+    $themes=Theme::all();
+    $articles = Resource::take(4)->get();
+   
+    // $articles = Article::orderBy('created_at', 'desc')->take(3)->get();
+    return view('frontend.pages.themes',compact('themes','articles'));
+
+}
+
+public function Resources(){
+
+    $themes=Theme::all();
+
+    return view('frontend.pages.themes',compact('themes'));
+
+}
+
+
+public function browsebyTheme($id){
+
+$theme=Theme::findOrFail($id);
+$otherThemes = Theme::where('id', '!=', $id)->get();
+return view('frontend.pages.browseby_theme',compact('theme','otherThemes'));
+}
+
+public function resourceDetails($id){
+
+$resource=Resource::findOrFail($id);
+return view('frontend.pages.resource_details',compact('resource'));
 }
 }

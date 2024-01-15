@@ -42,7 +42,7 @@
 
                 <div class="card-body">
                     <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="">Resource Name</label>
                     <input type="text" class="form-control" name="title" value="{{old('title')}}" @error('title')
                         is-invalid
@@ -52,7 +52,23 @@
                         <span class="text-danger"> {{$message}}</span>
                     @enderror
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-4">
+                  <label for=""> Theme</label>
+                <select name="theme_id" id="" class="form-control">
+
+                  <option selected disabled>Select Theme Category</option>
+                  @foreach ($themes as $theme)
+                  <option value="{{$theme->id}}">{{$theme->title}}</option>
+                  @endforeach
+              
+                </select>
+
+                  @error('title')
+                      <span class="text-danger"> {{$message}}</span>
+                  @enderror
+              </div>
+                <div class="col-md-4">
                     <label for="">Resource Image</label>
                     <input type="file" class="form-control" name="image" @error('record')
                         is-invalid
@@ -62,6 +78,19 @@
                 @enderror
                 </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <label for="">Resource introduction</label>
+                    <textarea name="introduction" id="meme1" class="form-control" @error('introduction')
+                        
+                    @enderror>{{old('introduction')}}</textarea>
+
+                    @error('introduction')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                  </div>
+              </div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="">Resource Description</label>
@@ -98,6 +127,13 @@
 
 @endsection
 @push('scripts')
+<script>
+    $(document).ready(function() {
+  $('#summernote').summernote();
+  $('#meme1').summernote();
+});
+</script>
+
 <script>
     $(document).ready(function() {
   $('#summernote').summernote();

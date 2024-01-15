@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Theme;
 use App\Models\Resource;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
@@ -32,8 +33,10 @@ class ResourcesController extends Controller
      */
     public function create()
     {
+
+        $themes=Theme::all();
         $data['page_title']='Create Resources';
-        return view('backend.resources.create',$data);
+        return view('backend.resources.create',$data)->with(compact('themes'));
     }
 
     /**
@@ -46,10 +49,13 @@ class ResourcesController extends Controller
     {
         $data=$request->all();  
 
+     
+
         $validator = Validator::make($request->all(), [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'title' => 'required',
             'description' => 'required',
+            'introduction' => 'required',
         ]);
 
 
@@ -179,16 +185,24 @@ class ResourcesController extends Controller
 
     public function fetchResources(){
 
-        $models = DB::select('SELECT * FROM `resources`');
+        $models = DB::table('resources')
+        ->join('themes','resources.theme_id','=','themes.id')
+        ->select('resources.id', 'themes.title as theme', 'resources.title','resources.status','resources.image','resources.description','resources.introduction')
+        ->get();
        
       
         return Datatables::of($models)
-           ->rawColumns(['action','photo','descrption'])
+           ->rawColumns(['action','photo','description','introducton'])
            ->editColumn('photo',function($model){
                $name=$model->image;
                $path=asset('backend/uploads/'.$name);
                return '<img src="'.$path.'" width="70px;" height="70px;"  alt="Service image" >';
            })       
+           ->editColumn('introduction',function($model){
+            $text=$model->introduction;
+            $introduction=str_limit(strip_tags($text), $limit = 50, $end = '...');
+             return $introduction;
+           })
            ->editColumn('description',function($model){
             $text=$model->description;
             $description=str_limit(strip_tags($text), $limit = 50, $end = '...');

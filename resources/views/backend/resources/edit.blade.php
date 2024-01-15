@@ -65,6 +65,19 @@
                 <img src="{{asset('backend/uploads/'.$resource->image)}}" alt="" height="50px" width="50px">
                 </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <label for="">Resource Introduction</label>
+                    <textarea name="introduction" id="meme1" class="form-control" @error('introduction')
+                        
+                    @enderror>{{$resource->introduction}}</textarea>
+
+                    @error('introduction')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                  </div>
+              </div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="">Resource Description</label>
@@ -80,7 +93,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Submit</button>
+                  <button type="submit" class="btn btn-info">Update</button>
                 </div>
               </form>
             </div>
@@ -105,6 +118,13 @@
     $(document).ready(function() {
   $('#summernote').summernote();
   $('#meme').summernote();
+});
+</script>
+
+<script>
+  $(document).ready(function() {
+$('#summernote').summernote();
+$('#meme1').summernote();
 });
 </script>
 

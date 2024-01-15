@@ -67,14 +67,15 @@
                                 <ul class="menu"> 
                                     <li class=""><a href="{{route('home')}}">Home</a></li>
                                     <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="services.html">Resources</a>
+                                    {{-- <li><a href="services.html">Resources</a>
                                         <ul class="submenu"> 
                                             <li><a href="">resource  01</a></li>
                                             <li><a href="">resource  02</a></li>
                                             <li><a href="">resource 03</a></li>
                                         </ul><!-- /.submenu -->
-                                    </li>
-                                    <li><a href="">partners</a></li>
+                                    </li> --}}
+                                    <li><a href="{{route('themes')}}">Resources</a></li>
+                                    <li><a href="">Members</a></li>
                                  
                                     <li><a href="">News</a></li>
                                   

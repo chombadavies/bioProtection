@@ -18,9 +18,10 @@ public function index(){
 
     $occupations=Occupation::all();
     $valuechains=ValueChain::all();
+     $resources = Resource::orderBy('created_at', 'desc')->take(3)->get();
     $pests=Pest::all();
    
-    return view('frontend.index',compact('valuechains','pests','occupations'));
+    return view('frontend.index',compact('valuechains','pests','occupations','resources'));
     
 }
 
@@ -41,7 +42,9 @@ public function bioProductDetails($id){
 }
 
 public function contactUs(){
-    return view('frontend.pages.contactus');
+    $themes=Theme::orderBy('created_at','desc')->take(4)->get();
+  
+    return view('frontend.pages.contactus',compact('themes'));
 }
 
 public function readMore(){
@@ -117,6 +120,13 @@ return view('frontend.pages.browseby_theme',compact('theme','otherThemes'));
 public function resourceDetails($id){
 
 $resource=Resource::findOrFail($id);
-return view('frontend.pages.resource_details',compact('resource'));
+
+
+$relatedResources = Resource::where(function ($query) use ($id, $resource) {
+    $query->where('id', '!=', $id)
+          ->where('theme_id', $resource->theme_id);
+})->get();
+
+return view('frontend.pages.resource_details',compact('resource','relatedResources'));
 }
 }

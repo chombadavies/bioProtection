@@ -174,36 +174,55 @@
         </div>
 <br>
         <div class="row">
-            <div class="col-md-6">
+            @foreach ($resources as $resource)
+            <div class="col-md-4">
                 <div class="card" style="width: 100%;border:none">
-                    <img class="card-img-top" src="{{asset('frontend/images/slides/meme.jpg')}}" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('backend/uploads/'.$resource->image)}}" alt="Card image cap" style="border-radius: 20px">
                     <br>
                     <div class="card-body">
-                      <h5 class="card-title">Augmentative biological control: The power of enhancing ecosystems</h5>
-                      <p class="card-text" style="text-align: justify">Explore augmentative biological control in agriculture, a sustainable alternative to pesticides that enhances ecosystems and crop yields. Learn about its benefits, challenges, and global impact.</p>
+                      <h5 class="card-title">{!!$resource->title!!}</h5>
+                      <p class="card-text" style="text-align: justify">{{strip_tags(str_limit($resource->introduction,$limit=250,$end='...'))}}</p>
                       <br>
-                      <a href="#" class="flat-button">Read More</a>
+                      <a href="{{route('resource.details',$resource->id)}}" class="btn btn-outline-success">Read More</a>
                     </div>
                   </div>
             </div>
+            @endforeach
+         
 
-            <div class="col-md-6">
-                <div class="card" style="width: 100%;border:none" >
-                    <img class="card-img-top" src="{{asset('frontend/images/slides/meme.jpg')}}" alt="Card image cap" height="150px">
-                    <br>
-                    <div class="card-body">
-                      <h5 class="card-title">Natural substance biopesticides beginner’s guide: Types and how to use </h5>
-                      <p class="card-text">Explore the power of natural substance biopesticides: learn all about plant extracts, botanical and mineral oils and how to use them.</p>
-                      <br>
-                      <a href="#" class="flat-button">Read More</a>
-                    </div>
-                  </div>
-            </div>
         </div>
+        <br>
+
+        <hr style="color: #009d40; height: 1px; background-color: #009d40;">
+ @foreach ($resources as $resource)
+ <a href="{{route('resource.details',$resource->id)}}" style="text-decoration: none; color: inherit;">
+ <div class="row align-items-center"  >
+    <div class="col-md-2">
+        <img src="{{asset('backend/uploads/'.$resource->image)}}" alt="" height="" width="150" style="border-radius: 20px">
+    </div>
+    <div class="col-md-8">
+        <p><b>{{$resource->title}}</b></p>
+
+        <p class="" style="text-align: justify">{!!str_limit($resource->description,$limit=350,$end='...')!!}</p>
+    
+    </div>
+    <div class="col-md-2 text-end">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+</div>
+  </a>
+<hr style="color: #009d40; height: 1px; background-color: #009d40;">
+<br>
+ @endforeach
+
+     <div style="float: right">
+        <a href="{{route('themes')}}"class="btn btn-outline-success">view all Resources</a>
+     </div>
+
     </div>
 </section>
 
-<section class="flat-row section-testimonials2 padding2">
+<section class="flat-row section-testimonials2 padding2" style="background-color: #edeff1;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">  
@@ -269,7 +288,7 @@
                                 <div class="testimonials style3 text-center"> 
                                     <div class="message">                                
                                         <blockquote class="whisper">
-                                           " Even though I am a seasoned business owner myself, I am sure that there’s always room for growth, inspiration, and new ideas.It's has provided a common language that is gaining popularity in the workplace as it creates new learning and sets people up for success."
+                                           "Even though I am a seasoned business owner myself, I am sure that there’s always room for growth, inspiration, and new ideas.It's has provided a common language that is gaining popularity in the workplace as it creates new learning and sets people up for success."
                                         </blockquote>
                                     </div>
                                     <div class="avatar">
@@ -454,26 +473,28 @@
                 </article>
             </div>
         </div>
+<br>
+<br>
+        <div class="row">
+            <div class="col-md-12">  
+                <div class="title-section text-center">
+                  
+                    <h2 class="cd-headline clip is-full-width">
+    
+                            Looking for safe and sustainable ways of managing pests and diseases?
+                         
+                    </h2>
+                    <a href="{{route('home')}}" class="flat-button"><i class="fa fa-search"></i> Search bioprotection products</a>
+                    
+                </div>      
+            </div>
+          
+        </div>
     </div>  
 </section>
 
 
 
-<section class="flat-row section-client bg-section">
-    <div class="container">
-        <div class="row">       
-            <div class="col-md-12">
-                <div class="flat-client" data-item="5" data-nav="false" data-dots="false" data-auto="true">
-                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
-                    <div class="client"><img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" alt="image"></div>
-                </div><!-- /.flat-client -->      
-            </div>
-        </div>
-    </div>             
-</section>
 @endsection
 
 @push("scripts")

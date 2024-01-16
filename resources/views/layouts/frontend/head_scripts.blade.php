@@ -30,6 +30,7 @@
     <!-- REVOLUTION LAYERS STYLES -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/revolution/css/layers.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/revolution/css/settings.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Favicon and touch icons  -->
     <link href="icon/apple-touch-icon-48-precomposed.png" rel="icon" sizes="48x48">

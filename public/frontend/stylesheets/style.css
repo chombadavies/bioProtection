@@ -377,7 +377,7 @@ input[type="color"],
 	color: #000;
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: "Work Sans", sans-serif; color: #0F3661; font-weight: 700; margin-bottom: 20px; }
+h1, h2, h3, h4, h5, h6 { font-family: "Work Sans", sans-serif; color: black; font-weight: 700; margin-bottom: 20px; }
 h1 { font-size: 36px; line-height: 40px; }
 h2 { font-size: 30px; line-height: 35px; }
 h3 { font-size: 24px; line-height: 30px; }

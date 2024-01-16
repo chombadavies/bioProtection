@@ -34,6 +34,7 @@
     <script src="{{asset('frontend/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
     <script src="{{asset('frontend/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
     <script src="{{asset('frontend/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+    
   
 
       <!-- The callback parameter is required, so we use console.debug as a noop -->

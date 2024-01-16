@@ -24,7 +24,7 @@
 
 @include('layouts.notifications')
 
-<section class="flat-row page-contact">
+<section class="flat-row page-contact" style="">
     <div class="container">
         <div class="wrap-infobox">
             <div class="row">
@@ -43,7 +43,7 @@
             </div> 
         </div>
     </div>
-    <div class="container">
+    <div class="container" >
         <div class="wrap-formcontact">
             <div class="row">
                 <div class="col-lg-5">
@@ -89,7 +89,7 @@
                         </div>
                         <div>
                             <label for="">Message</label>
-                            <span class="flat-input"><textarea name="message" placeholder="Messages" required="required"></textarea></span>
+                            <span class="flat-input"><textarea name="message" placeholder="Messages" cols="1" rows="1" required="required"></textarea></span>
                         </div>
                         <div class="">
                             <span class="flat-input"><button name="submit" type="submit" class="flat-button" id="submit" title="Submit now">send messages</button></span>
@@ -103,5 +103,118 @@
             </div>
         </div>
     </div>  
+</section>
+
+<section class="flat-row page-contact">
+    <div class="container">
+       
+            <div class="row">
+                <div class="col-md-12">  
+                    <div class="title-section text-center">
+                      
+                        <h1 class="cd-headline clip is-full-width">
+                          
+                          
+                                <b class="is-visible">Read Our Resources</b>
+                             
+                        
+                        </h1>
+                    </div>      
+                </div>
+              
+            </div>
+
+              
+        <br>
+        <div class="row">
+            @foreach ($themes as $theme)
+
+            <div class="col-md-3">
+                <div class="card" style="width: 100%;border:none">
+                    <img class="card-img-top" src="{{asset('backend/uploads/'.$theme->image)}}" alt="Card image cap" style="border-radius: 20px" height="60%">
+                    <br>
+                    <div class="card-body">
+                      <h5 class="card-title">{{$theme->title}}</h5>
+                      <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($theme->description,$limit=250,$end='...'))}}</p>
+                      <br>
+                      <a href="{{route('browseby.theme',$theme->id)}}" class="btn btn-outline-success">Read More</a>
+                    </div>
+                  </div>
+                  <br>
+            </div>
+            
+            @endforeach
+            
+        </div><br>
+        
+        <div style="float: right">
+            <a href="{{route('themes')}}"class="btn btn-outline-success">view all Resources</a>
+         </div>
+
+      
+
+{{-- 
+        <div class="row">
+            <div class="col-md-12">  
+                <div class="title-section text-center">
+                  
+                    <h1 class="cd-headline clip is-full-width">
+                      
+                     
+                       <b class="is-visible"> Popular Articles</b>
+                         
+                      
+                    </h1>
+                </div>      
+            </div>
+          
+        </div> --}}
+
+          
+    <br>
+    <div class="row">
+        {{-- @foreach ($articles as $article)
+
+        <div class="col-md-3">
+            <div class="card" style="width: 100%;border:none">
+                <img class="card-img-top" src="{{asset('backend/uploads/'.$article->image)}}" alt="Card image cap" style="border-radius:20px">
+                <br>
+                <div class="card-body">
+                  <h5 class="card-title">{{strip_tags(str_limit($article->title,$limit=44,$end='...'))}}</h5>
+                  <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($article->introduction,$limit=350,$end='...'))}}</p>
+                  <br>
+                  <div>
+                    <span> <b> Theme: </b><a href="{{route('browseby.theme',$article->theme->id)}}" style="color: #009d40"> {{$article->theme->title}}</a></span>
+
+                  </div>
+                 
+                  <br>
+                  <a href="{{route('themes.show',$theme->id)}}" class="btn btn-outline-success">Read More</a>
+                </div>
+              </div>
+              <br>
+        </div>
+        
+        @endforeach --}}
+        
+    </div><br>
+<br>
+    <div class="row">
+        <div class="col-md-12">  
+            <div class="title-section text-center">
+              
+                <h1 class="cd-headline clip is-full-width">
+
+                        Looking for safe and sustainable ways of managing pests and diseases?
+                     
+                </h1>
+                <a href="{{route('home')}}" class="flat-button"><i class="fa fa-search"></i> Search bioprotection products</a>
+                
+            </div>      
+        </div>
+      
+    </div>
+      
+    </div>
 </section>
 @endsection

@@ -39,9 +39,6 @@
                 </div>
             </div> 
             <hr>
-
-          
-
               
         <br>
         <div class="row">
@@ -57,9 +54,9 @@
           </div>
             
         </div><br>
+
+    
       
-
-
         <div class="row">
             <div class="col-md-12">  
                 <div class="title-section text-center">
@@ -67,37 +64,41 @@
                     <h1 class="cd-headline clip is-full-width">
                       
                       
-                            <b class="is-visible"> Related Themes</b>
+                            <b class="is-visible"> Related Resources</b>
                          
                     </h1>
                 </div>      
             </div>
           
         </div>
+     
+        
+      <hr style="color: #009d40; height: 1px; background-color: #009d40;">
+      
+             
+                @foreach ($relatedResources as $resource)
+    <a href="{{ route('resource.details', $resource->id) }}" style="text-decoration: none; color: inherit;">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <img src="{{ asset('backend/uploads/' . $resource->image) }}" alt="{{ $resource->title }}" height="80" width="100" style="border-radius: 20px">
+            </div>
+            <div class="col-md-8">
+                <h4><b>{{ $resource->title }}</b></h4>
+                {{-- Uncomment the next line if you want to include a description --}}
+                {{-- <p class="card-text" style="text-align: justify">{{ strip_tags(str_limit($resource->description, $limit = 350, $end = '...')) }}</p> --}}
+            </div>
+            <div class="col-md-1 text-end">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </a>
+    <hr style="color: #009d40; height: 1px; background-color: #009d40;">
+    <br>
+@endforeach
+
 
           
-    <br>
-    {{-- <div class="row">
-        @foreach ($otherThemes as $theme)
-
-        <div class="col-md-3">
-            <div class="card" style="width: 100%;border:none">
-                <img class="card-img-top" src="{{asset('backend/uploads/'.$theme->image)}}" alt="Card image cap">
-                <br>
-                <div class="card-body">
-                  <h5 class="card-title">{{$theme->title}}</h5>
-                  <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($theme->description,$limit=350,$end='...'))}}</p>
-                  <br>
-                  <a href="{{route('browseby.theme',$theme->id)}}" class="btn btn-outline-success">Read More</a>
-                </div>
-              </div>
-              <br>
-        </div>
-        
-        @endforeach
-        
-    </div><br> --}}
-
+<br>
     <div class="row">
         <div class="col-md-12">  
             <div class="title-section text-center">

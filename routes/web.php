@@ -36,6 +36,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth']],function(){
     Route::any('fetch_resources',[App\Http\Controllers\Backend\ResourcesController::class,'fetchResources'])->name('fetch.resources');
     Route::resource('themes',\App\Http\Controllers\Backend\ThemesController::class);
     Route::any('fetch_themes',[App\Http\Controllers\Backend\ThemesController::class,'fetchThemes'])->name('fetch.themes');
+    Route::resource('newscategories',\App\Http\Controllers\Backend\NewsCategoryController::class);
 });
 // frontend routes
 Route::any('/',[\App\Http\Controllers\Frontend\IndexController::class,'index'])->name('home');
@@ -47,6 +48,7 @@ Route::any('/read_more',[\App\Http\Controllers\Frontend\IndexController::class,'
 Route::any('/valuechain/cascadePests/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'cascadePests']);
 Route::any('/bioproduct/searchCrops/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'searchCrops']);
 Route::any('/bioproduct/searchPests/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'searchPests']);
+Route::any('/news',[\App\Http\Controllers\Frontend\IndexController::class,'news'])->name('news');
 Route::any('/resource_details/{id}',[App\Http\Controllers\Frontend\IndexController::class,'resourceDetails'])->name('resource.details');
 Route::any('/browseby_theme{id}',[\App\Http\Controllers\Frontend\IndexController::class,'browsebyTheme'])->name('browseby.theme');
 Route::any('/contacts_process',[App\Http\Controllers\Frontend\IndexController::class,'contactProcess'])->name('contact.process');

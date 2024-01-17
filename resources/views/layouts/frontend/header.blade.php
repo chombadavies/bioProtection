@@ -77,7 +77,7 @@
                                     <li><a href="{{route('themes')}}">Resources</a></li>
                                     <li><a href="">Members</a></li>
                                  
-                                    <li><a href="">News</a></li>
+                                    <li><a href="{{route('news')}}">News</a></li>
                                   
                                     <li><a href="{{route('contactus')}}">Contact Us</a></li>                      
                                 </ul><!-- /.menu -->

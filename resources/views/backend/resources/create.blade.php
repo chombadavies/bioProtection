@@ -94,7 +94,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="">Resource Description</label>
-                      <textarea name="description" id="meme" class="form-control" v @error('description')
+                      <textarea name="description" id="meme" class="form-control"  @error('description')
                           
                       @enderror>{{old('description')}}</textarea>
 

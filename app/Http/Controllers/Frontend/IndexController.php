@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\News;
 use App\Models\Pest;
 use App\Models\Theme;
+use App\Models\Resource;
 use App\Models\BioProduct;
 use App\Models\Occupation;
 use App\Models\ValueChain;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Resource;
 
 class IndexController extends Controller
 {
@@ -18,10 +19,11 @@ public function index(){
 
     $occupations=Occupation::all();
     $valuechains=ValueChain::all();
+    $news=News::orderBy('created_at','desc')->take(2)->get();
      $resources = Resource::orderBy('created_at', 'desc')->take(3)->get();
     $pests=Pest::all();
    
-    return view('frontend.index',compact('valuechains','pests','occupations','resources'));
+    return view('frontend.index',compact('valuechains','pests','occupations','resources','news'));
     
 }
 
@@ -101,14 +103,6 @@ public function Themes(){
 
 }
 
-public function Resources(){
-
-    $themes=Theme::all();
-
-    return view('frontend.pages.themes',compact('themes'));
-
-}
-
 
 public function browsebyTheme($id){
 
@@ -128,5 +122,12 @@ $relatedResources = Resource::where(function ($query) use ($id, $resource) {
 })->get();
 
 return view('frontend.pages.resource_details',compact('resource','relatedResources'));
+}
+
+
+public function news (){
+
+    $news=News::all();
+return view('frontend.pages.news',compact('news'));
 }
 }

@@ -40,16 +40,22 @@
                 <div class="card-body">
                     <div class="row">
                 <div class="col-md-4">
-                    <label for="">Pest Name</label>
+                    <label for="">Blog Title</label>
                     <input type="text" class="form-control" name="title">
                 </div>
                 <div class="col-md-4">
-                    <label for="">Pest Image </label>
+                    <label for="">Blog Image </label>
                     <input type="file" class="form-control" name="image">
                 </div>
                 <div class="col-md-4">
-                    <label for="">Publish Date </label>
-                    <input type="date" class="form-control" name="publish_date">
+                    <label for="">News Category </label>
+                  <select name="category_id" class="form-control">
+                    <option selected disabled> Select News Category</option>
+                      @foreach ($newsCategories as $category)
+                      <option value="{{$category->id}}">{{$category->title}}</option>
+                      @endforeach
+
+                  </select>
                 </div>
                  
                 </div>
@@ -57,14 +63,14 @@
                 <div class="col-md-12">
                     <label for="">News Summery</label>
                    
-                    <textarea name="summery" id="" cols="30" rows="4" class="form-control"> </textarea>
+                    <textarea name="summery" id="meme" cols="30" rows="4" class="form-control"> </textarea>
                 </div>
                 </div>
                 <div class="row">
                 <div class="col-md-12">
                     <label for="">News Description</label>
                    
-                    <textarea name="description" id="" cols="30" rows="7" class="form-control"> </textarea>
+                    <textarea name="description" id="meme1" cols="30" rows="7" class="form-control"> </textarea>
                 </div>
                 </div>
                 </div>
@@ -90,3 +96,23 @@
   </div>
 
 @endsection
+
+@push('scripts')
+    
+
+<script>
+  $(document).ready(function() {
+$('#summernote').summernote();
+$('#meme1').summernote();
+});
+</script>
+
+<script>
+  $(document).ready(function() {
+$('#summernote').summernote();
+$('#meme').summernote();
+});
+</script>
+
+
+@endpush

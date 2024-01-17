@@ -59,6 +59,7 @@
                                         <th>Action</th>
                                         <th>News Title</th>
                                         <th>News Photo</th>
+                                        <th>News Category</th>
                                         <th>News Summery</th>
                                          <th>News Description</th>
                                          <th>News Publish Date</th>
@@ -101,6 +102,7 @@
             {data: 'action', name: 'action',searchable:false,orderable:false},
            {data: 'title', name: 'title'},
            {data: 'photo', name: 'photo'},
+           {data: 'category', name: 'category'},
            {data: 'summery', name: 'summery'},
            {data: 'description', name: 'description'},
            {data: 'publish_date', name: 'publish_date'},

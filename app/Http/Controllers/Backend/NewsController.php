@@ -6,6 +6,8 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\NewsCategory;
+use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Str;
@@ -32,7 +34,8 @@ class NewsController extends Controller
     public function create()
     {
         $data["page_title"]="Create News";
-      return  view("backend.news.create",$data);
+        $newsCategories=NewsCategory::all();
+      return  view("backend.news.create",$data)->with(compact('newsCategories'));
     
     }
 
@@ -46,6 +49,7 @@ class NewsController extends Controller
     {
         $data=$request->all();  
 
+        $data['publish_date']=Carbon::now();
         if ($request->hasFile('image')) {
           
             $image_tmp = $request->file('image');
@@ -68,6 +72,7 @@ class NewsController extends Controller
         }
        $data['image']=$image;
      
+    
             
            $news=News::create($data);
         
@@ -97,8 +102,9 @@ class NewsController extends Controller
     {
         $data["page_title"]="Edit News";
         $news=News::findOrFail($id);
+        $newsCategories=NewsCategory::all();
         
-        return  view("backend.news.edit",$data)->with(compact('news'));
+        return  view("backend.news.edit",$data)->with(compact('news','newsCategories'));
     }
 
     /**
@@ -115,6 +121,7 @@ class NewsController extends Controller
         $data=$request->all();
 
         $news=News::findOrFail($id);
+        $data['publish_date']=$news->publish_date;
 
         if ($request->hasFile('image')) {
           
@@ -138,7 +145,7 @@ class NewsController extends Controller
         }
        $data['image']=$image;
      
-           
+          
            $status=$news->fill($data)->save();
         
            if ($status){
@@ -163,7 +170,12 @@ class NewsController extends Controller
     public function fetchNews(){
 
         $models = DB::select('SELECT * FROM `news`');
-       
+
+     
+        $models=DB::table('news')
+        ->join('news_categories','news.category_id','=','news_categories.id')
+        ->select('news.id','news_categories.title as category','news.title','news.image','news.summery','news.description','news.publish_date')
+        ->get();
       
         return Datatables::of($models)
            ->rawColumns(['action','photo','summery','descrption'])

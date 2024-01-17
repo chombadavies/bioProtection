@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class NewsCategory extends Model
 {
     use HasFactory;
-    
     protected $guarded=['id'];
 
-    public function category(){
-        return $this->belongsTo('App\Models\NewsCategory');
+    public function news(){
+        return $this->hasMany('App\Models\News');
     }
 }

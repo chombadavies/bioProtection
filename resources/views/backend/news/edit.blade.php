@@ -51,8 +51,14 @@
                 </div>             
                
                 <div class="col-md-4">
-                    <label for="">Publish Date </label>
-                    <input type="date" class="form-control" name="publish_date" value="{{$news->publish_date}}">
+                    <label for="">Blog Category </label>
+                   <select name="category_id" id="" class="form-control">
+                    
+                    @foreach ($newsCategories as $category)
+                        <option value="{{$category->id}}" {{$news->category_id ==$category->id? 'selected':""}}>{{$category->title}}</option>
+                    @endforeach
+
+                   </select>
                 </div>
                  
                 </div>
@@ -60,14 +66,14 @@
                 <div class="col-md-12">
                     <label for="">News Summery</label>
                    
-                    <textarea name="summery" id="" cols="30" rows="4" class="form-control">{{$news->summery}} </textarea>
+                    <textarea name="summery" id="meme"  class="form-control">{{$news->summery}} </textarea>
                 </div>
                 </div>
                 <div class="row">
                 <div class="col-md-12">
                     <label for="">News Description</label>
                    
-                    <textarea name="description" id="" cols="30" rows="7" class="form-control"> {{$news->description}}</textarea>
+                    <textarea name="description" id="meme1"  class="form-control"> {{$news->description}}</textarea>
                 </div>
                 </div>
                 </div>
@@ -93,3 +99,20 @@
   </div>
 
 @endsection
+
+@push('scripts')
+<script>
+$(document).ready(function() {
+  $('#summernote').summernote();
+  $('#meme1').summernote();
+  });
+  </script>
+  
+  <script>
+    $(document).ready(function() {
+  $('#summernote').summernote();
+  $('#meme').summernote();
+  });
+  </script>
+    
+@endpush

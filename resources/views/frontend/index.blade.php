@@ -433,48 +433,43 @@
         </div>
         <div class="blog-carosuel-wrap2">
             <div class="blog-shortcode post-list" >
-                <article class="entry clearfix">
-                    <div class="entry-border clearfix">
-                        <div class="featured-post">
-                            <a href="services-details.html"> <img src="{{asset('frontend/images/blog/pexels-simon-berger-1266810.jpg')}}" height="230" width="179" 
-                           style="border-radius: 20px;" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <div class="content-post">
-                            <span class="category">Advisory Plan</span>
-                            <h2 class="title-post"><a href="services-details.html">Kalro Launces BioProtection Products</a></h2>
-                            <div class="meta-data style2 clearfix">
-                                <ul class="meta-post clearfix">
-                                    <li class="day-time">
-                                        <span>26 Dec 2017</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div><!-- /.contetn-post -->
-                    </div><!-- /.entry-border -->
-                </article>
-                <article class="entry clearfix">
-                    <div class="entry-border clearfix">
-                        <div class="featured-post">
-                            <a href="services-details.html"> <img src="{{asset('frontend/images/blog/pexels-craig-adderley-1563355.jpg')}}" height="230" width="300"
-                           style="border-radius: 20px;" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <div class="content-post">
-                            <span class="category">Finance & Accounting</span>
-                            <h2 class="title-post"><a href="services-details.html">How To use Kalro BioProducts</a></h2>
-                            <div class="meta-data style2 clearfix">
-                                <ul class="meta-post clearfix">
-                                    <li class="day-time">
-                                        <span>20 Aug 2017</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div><!-- /.contetn-post -->
-                    </div><!-- /.entry-border -->
-                </article>
+
+               @foreach ($news as $item)
+               <article class="entry clearfix">
+                <div class="entry-border clearfix">
+                    <div class="featured-post">
+                        <a href="services-details.html"> <img src="{{asset('backend/uploads/'.$item->image)}}" height="230" width="179" 
+                       style="border-radius: 20px;" alt="image"></a>
+                    </div><!-- /.feature-post -->
+                    <div class="content-post">
+                        <span class="category">{{$item->category->title}}</span>
+                        <h2 class="title-post"><a href="services-details.html">{{$item->title}}</a></h2>
+                        <div>
+                            <span>{!!str_limit($item->summery,$limit=150,$end='...')!!}</span>
+                        </div>
+
+                        <div class="meta-data style2 clearfix">
+                            <ul class="meta-post clearfix">
+                                <li class="day-time">
+                                    <span>{{$item->publish_date}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- /.contetn-post -->
+                </div><!-- /.entry-border -->
+            </article>
+
+               @endforeach
+
             </div>
+
         </div>
-<br>
-<br>
+
+        <div style="float: right">
+            <a href="{{route('themes')}}"class="btn btn-outline-success">view all Blog Articles</a>
+         </div>
+                <br>
+                <br>
         <div class="row">
             <div class="col-md-12">  
                 <div class="title-section text-center">

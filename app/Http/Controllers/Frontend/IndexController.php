@@ -12,6 +12,7 @@ use App\Models\ValueChain;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\NewsCategory;
 
 class IndexController extends Controller
 {
@@ -126,8 +127,36 @@ return view('frontend.pages.resource_details',compact('resource','relatedResourc
 
 
 public function news (){
+    $categories=NewsCategory::all();
+return view('frontend.pages.news',compact('categories'));
+}
 
-    $news=News::all();
-return view('frontend.pages.news',compact('news'));
+public function getDefaultNews()
+{
+    
+  
+    $defaultNews=News::orderBy('created_at','desc')->take(6)->get();
+
+    return view('frontend.partials.news_items')->with('news', $defaultNews);
+}
+
+public function getNewsByCategory(Request $request){
+
+    $categoryId = $request->input('category_id');
+
+    // Fetch news based on the selected category
+    $news = News::where('category_id', $categoryId)->get();
+
+    // You can create a Blade view for the news items or generate HTML directly here
+    return view('frontend.partials.news_items')->with('news', $news);
+}
+public function newsDetails($id){
+
+    $news=News::findOrFail($id);
+    $relatedNews = News::where(function ($query) use ($id, $news) {
+        $query->where('id', '!=', $id)
+              ->where('category_id', $news->category_id);
+    })->get();
+return view('frontend.pages.news_details',compact('news','relatedNews'));
 }
 }

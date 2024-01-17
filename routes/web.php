@@ -49,6 +49,9 @@ Route::any('/valuechain/cascadePests/{id}',[\App\Http\Controllers\Frontend\Index
 Route::any('/bioproduct/searchCrops/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'searchCrops']);
 Route::any('/bioproduct/searchPests/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'searchPests']);
 Route::any('/news',[\App\Http\Controllers\Frontend\IndexController::class,'news'])->name('news');
+Route::get('/get-news-by-category', [\App\Http\Controllers\Frontend\IndexController::class,'getNewsByCategory'])->name('getNewsByCategory');
+Route::get('/get-default-news', [\App\Http\Controllers\Frontend\IndexController::class,'getDefaultNews'])->name('getDefaultNews');
 Route::any('/resource_details/{id}',[App\Http\Controllers\Frontend\IndexController::class,'resourceDetails'])->name('resource.details');
-Route::any('/browseby_theme{id}',[\App\Http\Controllers\Frontend\IndexController::class,'browsebyTheme'])->name('browseby.theme');
+Route::any('/browseby_theme/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'browsebyTheme'])->name('browseby.theme');
+Route::any('/news_details/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'newsDetails'])->name('news.details');
 Route::any('/contacts_process',[App\Http\Controllers\Frontend\IndexController::class,'contactProcess'])->name('contact.process');

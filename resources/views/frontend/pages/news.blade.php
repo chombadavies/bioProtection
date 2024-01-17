@@ -52,22 +52,25 @@
               
             </div>
 
+          
+
             <div class="page-title parallax parallax1">
              
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="col-md-5"> 
+                        <div class="col-md-5">
                             <div class="page-title-heading">
-                               
-                               
-                            </div><!-- /.page-title-captions -->  
+                            </div>
                             <div class="">
-                                  <select name="" id="" class="form-control">
-                                    <option value="">Select Blog Category</option>
-                                </select>              
-                            </div><!-- /.breadcrumbs --> 
-                        </div><!-- /.col-md-12 -->  
+                                <select name="category" id="categorySelect" class="form-control">
+                                    <option selected disabled>Select Blog Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div><!-- /.row -->  
                 </div><!-- /.container -->                      
             </div><!-- /.page-title --> 
@@ -75,28 +78,10 @@
 
         <br>
         
-        <div class="row">
-            @foreach ($news as $news)
-
-            <div class="col-md-4">
-                <div class="card" style="width: 100%;border:none">
-                    <img class="card-img-top" src="{{asset('backend/uploads/'.$news->image)}}" alt="Card image cap" style="border-radius: 20px" height="60%">
-                    <br>
-                    <div class="card-body">
-                      <h5 class="card-title">{{$news->title}}</h5>
-                      <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($news->summery,$limit=250,$end='...'))}}</p>
-                      <br>
-                      <a href="{{route('browseby.theme',$news->id)}}" class="btn btn-outline-success">Read More</a>
-                    </div>
-                  </div>
-                  <br>
-            </div>
-            
-            @endforeach
-            
-        </div><br>
-      
-  
+        
+        <div id="news-container" class="row">
+           
+        </div>
     <br>
     
 <br>
@@ -120,3 +105,55 @@
 </section>
 
 @endsection
+
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        // Function to fetch and display news based on the selected category
+        function fetchNews(categoryId) {
+            // Make an Ajax request to fetch news based on the selected category
+            $.ajax({
+                url: '{{ route("getNewsByCategory") }}',
+                type: 'GET',
+                data: { category_id: categoryId },
+                success: function(response) {
+                    // Update the news container with the fetched news HTML
+                    $('#news-container').html(response);
+                },
+                error: function(error) {
+                    console.error('Ajax request failed:', error);
+                }
+            });
+        }
+
+        // Function to fetch and display default news
+        function fetchDefaultNews() {
+            // Make an Ajax request to fetch default news
+            $.ajax({
+                url: '{{ route("getDefaultNews") }}', // Add the route for default news
+                type: 'GET',
+                success: function(response) {
+                    // Update the news container with the fetched default news HTML
+                    $('#news-container').html(response);
+                },
+                error: function(error) {
+                    console.error('Ajax request failed:', error);
+                }
+            });
+        }
+
+        // Initial call to fetch default news
+        fetchDefaultNews(); // Call this function to fetch default news
+
+        // Attach change event listener to the category select element
+        $('#categorySelect').change(function() {
+            // Get the selected category ID
+            var categoryId = $(this).val();
+
+            // Call the fetchNews function with the selected category ID
+            fetchNews(categoryId);
+        });
+    });
+</script>
+@endpush

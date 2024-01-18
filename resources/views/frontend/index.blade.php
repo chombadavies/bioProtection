@@ -466,7 +466,7 @@
         </div>
 
         <div style="float: right">
-            <a href="{{route('themes')}}"class="btn btn-outline-success">view all Blog Articles</a>
+            <a href="{{route('news')}}"class="btn btn-outline-success">view all Blog Articles</a>
          </div>
                 <br>
                 <br>

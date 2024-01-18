@@ -66,7 +66,7 @@
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu"> 
                                     <li class=""><a href="{{route('home')}}">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="#">About Us</a></li>
                                     {{-- <li><a href="services.html">Resources</a>
                                         <ul class="submenu"> 
                                             <li><a href="">resource  01</a></li>

@@ -13,7 +13,7 @@
                 <div class="breadcrumbs">
                     <ul>
                         <li class="home"><i class="fa fa-home"></i><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="{{route('themes')}}">resources</a></li>
+                        <li><a href="{{route('news')}}">News</a></li>
                         <li><a href="#">{{$news->title}}</a></li>
                         
                     </ul>                   
@@ -33,6 +33,7 @@
                   <h2 style="text-align: justify;margin:0">{{$news->title}}</h2> 
 <br>
                   <div>
+                    {{-- {{route('browseby.category',$news->category->id)}} --}}
                     <span> <b> Category: </b><a href="" style="color: #009d40"> {{$news->category->title}}</a></span>
 
                   </div>      
@@ -50,7 +51,8 @@
           </div>
 
           <div>
-            <div> <img src="{{asset('backend/uploads/'.$news->image)}}" alt=""></div>
+            {{-- {{asset('backend/uploads/'.$news->image)}} --}}
+            <div> <img src="" alt=""></div>
            
            {!!$news->description!!}
           </div>

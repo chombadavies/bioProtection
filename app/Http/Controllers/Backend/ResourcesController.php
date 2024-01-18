@@ -52,7 +52,7 @@ class ResourcesController extends Controller
      
 
         $validator = Validator::make($request->all(), [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,webp,jpg,gif|max:2048',
             'title' => 'required',
             'description' => 'required',
             'introduction' => 'required',

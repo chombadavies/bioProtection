@@ -105,58 +105,66 @@ public function Themes(){
 }
 
 
-public function browsebyTheme($id){
+            public function browsebyTheme($id){
 
-$theme=Theme::findOrFail($id);
-$otherThemes = Theme::where('id', '!=', $id)->get();
-return view('frontend.pages.browseby_theme',compact('theme','otherThemes'));
-}
+            $theme=Theme::findOrFail($id);
+            $otherThemes = Theme::where('id', '!=', $id)->get();
+            return view('frontend.pages.browseby_theme',compact('theme','otherThemes'));
+            }
 
-public function resourceDetails($id){
+            public function resourceDetails($id){
 
-$resource=Resource::findOrFail($id);
-
-
-$relatedResources = Resource::where(function ($query) use ($id, $resource) {
-    $query->where('id', '!=', $id)
-          ->where('theme_id', $resource->theme_id);
-})->get();
-
-return view('frontend.pages.resource_details',compact('resource','relatedResources'));
-}
+            $resource=Resource::findOrFail($id);
 
 
-public function news (){
-    $categories=NewsCategory::all();
-return view('frontend.pages.news',compact('categories'));
-}
+            $relatedResources = Resource::where(function ($query) use ($id, $resource) {
+                $query->where('id', '!=', $id)
+                    ->where('theme_id', $resource->theme_id);
+            })->get();
 
-public function getDefaultNews()
-{
-    
-  
-    $defaultNews=News::orderBy('created_at','desc')->take(6)->get();
+            return view('frontend.pages.resource_details',compact('resource','relatedResources'));
+            }
 
-    return view('frontend.partials.news_items')->with('news', $defaultNews);
-}
 
-public function getNewsByCategory(Request $request){
+            public function news (){
+                $categories=NewsCategory::all();
+            return view('frontend.pages.news',compact('categories'));
+            }
 
-    $categoryId = $request->input('category_id');
+            public function getDefaultNews()
+            {
+                
+            
+                $defaultNews=News::orderBy('created_at','desc')->take(6)->get();
 
-    // Fetch news based on the selected category
-    $news = News::where('category_id', $categoryId)->get();
+                return view('frontend.partials.news_items')->with('news', $defaultNews);
+            }
 
-    // You can create a Blade view for the news items or generate HTML directly here
-    return view('frontend.partials.news_items')->with('news', $news);
-}
-public function newsDetails($id){
+            public function getNewsByCategory(Request $request){
 
-    $news=News::findOrFail($id);
-    $relatedNews = News::where(function ($query) use ($id, $news) {
-        $query->where('id', '!=', $id)
-              ->where('category_id', $news->category_id);
-    })->get();
-return view('frontend.pages.news_details',compact('news','relatedNews'));
-}
-}
+                $categoryId = $request->input('category_id');
+
+                // Fetch news based on the selected category
+                $news = News::where('category_id', $categoryId)->get();
+
+                // You can create a Blade view for the news items or generate HTML directly here
+                return view('frontend.partials.news_items')->with('news', $news);
+            }
+            public function newsDetails($id){
+
+                $news=News::findOrFail($id);
+                $relatedNews = News::where(function ($query) use ($id, $news) {
+                    $query->where('id', '!=', $id)
+                        ->where('category_id', $news->category_id);
+                })->get();
+            return view('frontend.pages.news_details',compact('news','relatedNews'));
+            }
+
+
+            public function browsebyCategory($id){
+
+                $category=NewsCategory::findOrFail($id); 
+                dd($category->news);
+                return view('frontend.pages.browseby_category',compact('category'));
+            }
+            }

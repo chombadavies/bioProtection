@@ -53,5 +53,6 @@ Route::get('/get-news-by-category', [\App\Http\Controllers\Frontend\IndexControl
 Route::get('/get-default-news', [\App\Http\Controllers\Frontend\IndexController::class,'getDefaultNews'])->name('getDefaultNews');
 Route::any('/resource_details/{id}',[App\Http\Controllers\Frontend\IndexController::class,'resourceDetails'])->name('resource.details');
 Route::any('/browseby_theme/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'browsebyTheme'])->name('browseby.theme');
+Route::any('/browseby_category/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'browsebyCategory'])->name('browseby.category');
 Route::any('/news_details/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'newsDetails'])->name('news.details');
 Route::any('/contacts_process',[App\Http\Controllers\Frontend\IndexController::class,'contactProcess'])->name('contact.process');

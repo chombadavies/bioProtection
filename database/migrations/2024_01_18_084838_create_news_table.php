@@ -18,7 +18,7 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->longText('summery');
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->constrained('news_categories');
             $table->longText('description');
             $table->date('publish_date');
             $table->timestamps();

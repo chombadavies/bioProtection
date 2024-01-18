@@ -33,7 +33,7 @@
                     <div class="title-section text-center">
                       
                         <h1 class="cd-headline clip is-full-width">
-                                <b class="is-visible">News by : {{$category->title}}</b>
+                                <b class="is-visible">News by Category: {{$category->title}} </b>
                         </h1>
 
                         {{-- <h4 style="text-align: justify;margin:0">{!!$theme->description!!}</h4>  --}}

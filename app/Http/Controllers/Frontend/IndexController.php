@@ -12,37 +12,38 @@ use App\Models\ValueChain;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\NewsCategory;
+use App\Models\Category;
 
 class IndexController extends Controller
 {
 public function index(){
 
     $occupations=Occupation::all();
-    $valuechains=ValueChain::all();
+    $valuechains=ValueChain::orderBy('created_at','desc')->take(2)->get();
     $news=News::orderBy('created_at','desc')->take(2)->get();
      $resources = Resource::orderBy('created_at', 'desc')->take(3)->get();
+     $moreResources = Resource::orderBy('created_at', 'asc')->take(3)->get();
     $pests=Pest::all();
    
-    return view('frontend.index',compact('valuechains','pests','occupations','resources','news'));
+    return view('frontend.index',compact('valuechains','pests','occupations','resources','news','moreResources'));
     
 }
 
-public function bioProducts(Request $request){
-$data=$request->all();
-$valuechain=ValueChain::where('id',$data['valuechain_id'])->first();
-$pest=Pest::where('id',$data['pest_id'])->first();
+        public function bioProducts(Request $request){
+        $data=$request->all();
+        $valuechain=ValueChain::where('id',$data['valuechain_id'])->first();
+        $pest=Pest::where('id',$data['pest_id'])->first();
 
-$bioproducts=BioProduct::where(["valuechain_id"=>$data['valuechain_id'],"pest_id"=>$data['pest_id']])->get();
+        $bioproducts=BioProduct::where(["valuechain_id"=>$data['valuechain_id'],"pest_id"=>$data['pest_id']])->get();
 
-    return view('frontend.pages.bioproducts')->with(compact('bioproducts','valuechain','pest'));
-}
+            return view('frontend.pages.bioproducts')->with(compact('bioproducts','valuechain','pest'));
+        }
 
-public function bioProductDetails($id){
-  $bioproduct=BioProduct::findOrFail($id);
-//   dd($bioproduct);
-    return view('frontend.pages.bioproduct_details')->with(compact('bioproduct'));
-}
+        public function bioProductDetails($id){
+        $bioproduct=BioProduct::findOrFail($id);
+        //   dd($bioproduct);
+            return view('frontend.pages.bioproduct_details')->with(compact('bioproduct'));
+        }
 
 public function contactUs(){
     $themes=Theme::orderBy('created_at','desc')->take(4)->get();
@@ -127,7 +128,7 @@ public function Themes(){
 
 
             public function news (){
-                $categories=NewsCategory::all();
+                $categories=Category::all();
             return view('frontend.pages.news',compact('categories'));
             }
 
@@ -163,8 +164,8 @@ public function Themes(){
 
             public function browsebyCategory($id){
 
-                $category=NewsCategory::findOrFail($id); 
-                dd($category->news);
+                $category=Category::findOrFail($id); 
+            
                 return view('frontend.pages.browseby_category',compact('category'));
             }
             }

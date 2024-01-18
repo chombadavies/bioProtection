@@ -55,6 +55,10 @@
                       <h5 class="card-title">{{$resource->title}}</h5>
                       <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($resource->introduction,$limit=250,$end='...'))}}</p>
                       <br>
+                      <div>
+                        <span>Theme: <a href="{{route('browseby.theme',$resource->theme->id)}}" style="color: #009d40"> {{$resource->theme->title}}</a></span>
+                      </div>
+                      <br>
                       <a href="{{route('resource.details',$resource->id)}}" class="btn btn-outline-success">Read More</a>
                     </div>
                   </div>
@@ -95,6 +99,7 @@
                   <h5 class="card-title">{{$theme->title}}</h5>
                   <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($theme->description,$limit=350,$end='...'))}}</p>
                   <br>
+                  
                   <a href="{{route('browseby.theme',$theme->id)}}" class="btn btn-outline-success">Read More</a>
                 </div>
               </div>

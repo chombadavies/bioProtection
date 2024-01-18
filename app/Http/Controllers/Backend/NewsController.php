@@ -6,7 +6,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\NewsCategory;
+use App\Models\Category;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use Yajra\Datatables\Datatables;
@@ -34,7 +34,7 @@ class NewsController extends Controller
     public function create()
     {
         $data["page_title"]="Create News";
-        $newsCategories=NewsCategory::all();
+        $newsCategories=Category::all();
       return  view("backend.news.create",$data)->with(compact('newsCategories'));
     
     }
@@ -102,7 +102,7 @@ class NewsController extends Controller
     {
         $data["page_title"]="Edit News";
         $news=News::findOrFail($id);
-        $newsCategories=NewsCategory::all();
+        $newsCategories=Category::all();
         
         return  view("backend.news.edit",$data)->with(compact('news','newsCategories'));
     }
@@ -173,8 +173,8 @@ class NewsController extends Controller
 
      
         $models=DB::table('news')
-        ->join('news_categories','news.category_id','=','news_categories.id')
-        ->select('news.id','news_categories.title as category','news.title','news.image','news.summery','news.description','news.publish_date')
+        ->join('categories','news.category_id','=','categories.id')
+        ->select('news.id','categories.title as category','news.title','news.image','news.summery','news.description','news.publish_date')
         ->get();
       
         return Datatables::of($models)

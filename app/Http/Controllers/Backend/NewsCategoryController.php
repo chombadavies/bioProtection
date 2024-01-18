@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\NewsCategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class NewsCategoryController extends Controller
@@ -38,7 +38,7 @@ class NewsCategoryController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
-      $category=NewsCategory::create($data);
+      $category=Category::create($data);
 
       if($category){
         return redirect()->back()->with('success','category added Successfully');

@@ -26,10 +26,9 @@
     <section class="flat-row services-grid">
         <div class="container">
             <div class="wrap-item wrap-column clearfix">
-               
-              @foreach ($bioproducts as $bioproduct)
-
-              <div class="item border-shadow flat-column3 clearfix" >
+                @forelse ($bioproducts as $bioproduct)
+                    
+          <div class="item border-shadow flat-column3 clearfix" >
                 <div class="item-border clearfix">
                     <div class="featured-item" style="height:250px">
                         <a href="{{route('bioproduct.details',$bioproduct->id)}}"> <img src="{{asset('backend/uploads/'.$bioproduct->image)}}" alt=""   alt="image"></a>
@@ -44,7 +43,24 @@
                     </div><!-- /.contetn-post -->
                 </div><!-- /.entry-border -->
             </div>
-              @endforeach
+            @empty
+                 
+            <div class="row">
+                <div class="col-md-12">  
+                    <div class="title-section text-center">
+                      
+                        <h1 class="cd-headline clip is-full-width">
+        
+                                No Data Found
+                             
+                        </h1>
+                        
+                        
+                    </div>      
+                </div>
+              
+            </div>
+            @endforelse
             
              
             </div>         

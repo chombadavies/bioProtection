@@ -194,16 +194,16 @@
         <br>
 
         <hr style="color: #009d40; height: 1px; background-color: #009d40;">
- @foreach ($resources as $resource)
- <a href="{{route('resource.details',$resource->id)}}" style="text-decoration: none; color: inherit;">
+ @foreach ($moreResources as $moreResource)
+ <a href="{{route('resource.details',$moreResource->id)}}" style="text-decoration: none; color: inherit;">
  <div class="row align-items-center"  >
     <div class="col-md-2">
-        <img src="{{asset('backend/uploads/'.$resource->image)}}" alt="" height="" width="150" style="border-radius: 20px">
+        <img src="{{asset('backend/uploads/'.$moreResource->image)}}" alt="" height="" width="150" style="border-radius: 20px">
     </div>
     <div class="col-md-8">
-        <p><b>{{$resource->title}}</b></p>
+        <p><b>{{$moreResource->title}}</b></p>
 
-        <p class="" style="text-align: justify">{!!str_limit($resource->description,$limit=350,$end='...')!!}</p>
+        <p class="" style="text-align: justify">{{strip_tags(str_limit($moreResource->introduction,$limit=350,$end='...'))}}</p>
     
     </div>
     <div class="col-md-2 text-end">

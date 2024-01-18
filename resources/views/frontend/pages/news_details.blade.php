@@ -33,8 +33,8 @@
                   <h2 style="text-align: justify;margin:0">{{$news->title}}</h2> 
 <br>
                   <div>
-                    {{-- {{route('browseby.category',$news->category->id)}} --}}
-                    <span> <b> Category: </b><a href="" style="color: #009d40"> {{$news->category->title}}</a></span>
+                   
+                    <span> <b> Category: </b><a href="{{route('browseby.category',$news->category->id)}}" style="color: #009d40"> {{$news->category->title}}</a></span>
 
                   </div>      
                 </div>
@@ -52,7 +52,7 @@
 
           <div>
             {{-- {{asset('backend/uploads/'.$news->image)}} --}}
-            <div> <img src="" alt=""></div>
+            <div> <img src="{{asset('backend/uploads/'.$news->image)}}" alt=""></div>
            
            {!!$news->description!!}
           </div>

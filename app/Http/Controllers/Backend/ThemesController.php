@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
 class ThemesController extends Controller
@@ -190,7 +191,7 @@ class ThemesController extends Controller
            })       
            ->editColumn('description',function($model){
             $text=$model->description;
-            $description=str_limit(strip_tags($text), $limit = 50, $end = '...');
+            $description=Str::limit(strip_tags($text), $limit = 50, $end = '...');
              return $description;
            })
             ->addColumn('action', function ($model) {

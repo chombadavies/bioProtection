@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Str;
+
+
 class ResourcesController extends Controller
 {
     /**
@@ -200,12 +203,12 @@ class ResourcesController extends Controller
            })       
            ->editColumn('introduction',function($model){
             $text=$model->introduction;
-            $introduction=str_limit(strip_tags($text), $limit = 50, $end = '...');
+            $introduction=Str::limit(strip_tags($text), $limit = 50, $end = '...');
              return $introduction;
            })
            ->editColumn('description',function($model){
             $text=$model->description;
-            $description=str_limit(strip_tags($text), $limit = 50, $end = '...');
+            $description=Str::limit(strip_tags($text), $limit = 50, $end = '...');
              return $description;
            })
             ->addColumn('action', function ($model) {

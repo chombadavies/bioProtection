@@ -12,6 +12,8 @@ use Intervention\Image\Facades\Image;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Str;
 
+
+
 class NewsController extends Controller
 {
     /**
@@ -186,12 +188,12 @@ class NewsController extends Controller
            })
            ->editColumn('summery',function($model){
             $text=$model->summery;
-            $summery=str_limit(strip_tags($text), $limit = 50, $end = '...');
+            $summery=Str::limit(strip_tags($text), $limit = 50, $end = '...');
              return $summery;
            })
            ->editColumn('description',function($model){
             $text=$model->description;
-            $description=str_limit(strip_tags($text), $limit = 50, $end = '...');
+            $description=Str::limit(strip_tags($text), $limit = 50, $end = '...');
              return $description;
            })
             ->addColumn('action', function ($model) {

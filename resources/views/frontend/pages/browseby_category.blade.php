@@ -1,6 +1,9 @@
 @extends('layouts.frontend.main')
 
 @section('content')
+@php
+    use Illuminate\Support\Str;
+@endphp
 <div class="page-title parallax parallax1">
     <div class="section-overlay"></div>
     <div class="container">
@@ -53,7 +56,7 @@
                     <br>
                     <div class="card-body">
                       <h5 class="card-title">{{$news->title}}</h5>
-                      <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($news->summery,$limit=250,$end='...'))}}</p>
+                      <p class="card-text" style="text-align: justify"> {{strip_tags(Str::limit($news->summery,$limit=250,$end='...'))}}</p>
                       <br>
                       <a href="{{route('news.details',$news->id)}}" class="btn btn-outline-success">Read More</a>
                     </div>

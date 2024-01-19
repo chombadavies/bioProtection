@@ -1,6 +1,11 @@
 @extends('layouts.frontend.main')
 
 @section('content')
+
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 <div class="page-title parallax parallax1">
     <div class="section-overlay"></div>
     <div class="container">
@@ -53,7 +58,7 @@
                     <br>
                     <div class="card-body">
                       <h5 class="card-title">{{$resource->title}}</h5>
-                      <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($resource->introduction,$limit=250,$end='...'))}}</p>
+                      <p class="card-text" style="text-align: justify"> {{strip_tags(Str::limit($resource->introduction,$limit=250,$end='...'))}}</p>
                       <br>
                       <div>
                         <span>Theme: <a href="{{route('browseby.theme',$resource->theme->id)}}" style="color: #009d40"> {{$resource->theme->title}}</a></span>
@@ -97,7 +102,7 @@
                 <br>
                 <div class="card-body">
                   <h5 class="card-title">{{$theme->title}}</h5>
-                  <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($theme->description,$limit=350,$end='...'))}}</p>
+                  <p class="card-text" style="text-align: justify"> {{strip_tags(Str::limit($theme->description,$limit=350,$end='...'))}}</p>
                   <br>
                   
                   <a href="{{route('browseby.theme',$theme->id)}}" class="btn btn-outline-success">Read More</a>

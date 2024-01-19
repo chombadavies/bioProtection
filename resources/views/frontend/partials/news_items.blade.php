@@ -9,7 +9,7 @@
         <br>
         <div class="card-body">
           <h5 class="card-title">{{$news->title}}</h5>
-          <p class="card-text" style="text-align: justify"> {{strip_tags(str_limit($news->summery,$limit=250,$end='...'))}}</p>
+          <p class="card-text" style="text-align: justify"> {{strip_tags(Str::limit($news->summery,$limit=250,$end='...'))}}</p>
           <br>
           <a href="{{route('news.details',$news->id)}}" class="btn btn-outline-success">Read More</a>
         </div>

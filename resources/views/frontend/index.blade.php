@@ -1,6 +1,10 @@
 @extends('layouts.frontend.main')
 
 @section('content')
+
+@php
+    use Illuminate\Support\Str;
+@endphp
 <div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container slide-overlay" data-alias="classic4export" data-source="gallery">
                 
     <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
@@ -181,7 +185,7 @@
                     <br>
                     <div class="card-body">
                       <h5 class="card-title">{!!$resource->title!!}</h5>
-                      <p class="card-text" style="text-align: justify">{{strip_tags(str_limit($resource->introduction,$limit=250,$end='...'))}}</p>
+                      <p class="card-text" style="text-align: justify">{{strip_tags(Str::limit($resource->introduction,$limit=250,$end='...'))}}</p>
                       <br>
                       <a href="{{route('resource.details',$resource->id)}}" class="btn btn-outline-success">Read More</a>
                     </div>
@@ -203,7 +207,7 @@
     <div class="col-md-8">
         <p><b>{{$moreResource->title}}</b></p>
 
-        <p class="" style="text-align: justify">{{strip_tags(str_limit($moreResource->introduction,$limit=350,$end='...'))}}</p>
+        <p class="" style="text-align: justify">{{strip_tags(Str::limit($moreResource->introduction,$limit=350,$end='...'))}}</p>
     
     </div>
     <div class="col-md-2 text-end">
@@ -445,7 +449,7 @@
                         <span class="category">{{$item->category->title}}</span>
                         <h2 class="title-post"><a href="services-details.html">{{$item->title}}</a></h2>
                         <div>
-                            <span>{!!str_limit($item->summery,$limit=150,$end='...')!!}</span>
+                            <span>{!!Str::limit($item->summery,$limit=150,$end='...')!!}</span>
                         </div>
 
                         <div class="meta-data style2 clearfix">

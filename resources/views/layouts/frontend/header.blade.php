@@ -75,7 +75,7 @@
                                         </ul><!-- /.submenu -->
                                     </li> --}}
                                     <li><a href="{{route('themes')}}">Resources</a></li>
-                                    <li><a href="">Members</a></li>
+                                    <li><a href="#">Members</a></li>
                                  
                                     <li><a href="{{route('news')}}">News</a></li>
                                   

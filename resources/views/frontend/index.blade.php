@@ -152,7 +152,8 @@
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi. Excepteur sint occaecat cupidatat non proident.
                         </div>
                     </div>
-                    <a href="{{route('read.more')}}" class="flat-button btn btn-success">Read more</a>
+                    {{-- {{route('read.more')}} --}}
+                    <a href="" class="flat-button btn btn-success">Read more</a>
                 </div>
             </div>
         </div>

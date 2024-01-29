@@ -147,7 +147,9 @@ class PestsController extends Controller
      */
     public function destroy($id)
     {
-        return $id;
+        $pest=Pest::findOrFail($id);
+        $pest->delete();
+        return redirect()->route('pests.index')->with('success','Pest Deleted successfully');
     }
 
 
@@ -172,13 +174,13 @@ class PestsController extends Controller
         <button class="btn btn-pink btn btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-        <li><a style="cursor:pointer;" href="' . $edit_url . '">Edit News</a></li>
+        <li><a style="cursor:pointer;" href="' . $edit_url . '">Edit Pest</a></li>
         <li><div class="dropdown-divider"></div></li>
         <li>
         <form action="' . $delete_url . '" method="post" id="delete-form-' . $model->id . '">
             ' . csrf_field() . '
             ' . method_field('DELETE') . '
-            <a style="cursor:pointer;" href="#" class="delete-news-button" onclick="event.preventDefault(); document.getElementById(\'delete-form-' . $model->id . '\').submit();">Delete News</a>
+            <a style="cursor:pointer;" href="#" class="delete-news-button" onclick="event.preventDefault(); document.getElementById(\'delete-form-' . $model->id . '\').submit();">Delete Pest</a>
            
         </form>
     </li>
